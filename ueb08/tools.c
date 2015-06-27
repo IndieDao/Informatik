@@ -2,6 +2,7 @@
 #include "tools.h"
 #include "escapesequenzen.h"
 
+/*Kommentar für Sophie*/
 void printFrame()
 {
    CLEAR;
