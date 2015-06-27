@@ -2,7 +2,6 @@
 #include "tools.h"
 #include "escapesequenzen.h"
 
-/*Kommentar für Sophie*/
 void printFrame()
 {
    CLEAR;
@@ -59,6 +58,8 @@ void printInputNumber(int Zeile, short Zahl)
 
 char getOperator(int Zeile)
 {
+   int GueltigeEingabe;
+   char Op;
    POSITION(5, 18); //Eingabezeile l�schen
    printf("                                              ");
    POSITION(5, 18); //Eingabeposition
@@ -102,12 +103,13 @@ short calcResult(short Z1, short Z2, char Op)
    case '~':
       return (~Z1);
    }
+   return;
 }
 
 void printResultNumber(int Zeile, short Zahl)
 {
 
-   printBinary();
+//   printBinary();
 }
 
 void printBinary(int Zeile, short Zahl)
@@ -124,7 +126,7 @@ void printBinary(int Zeile, short Zahl)
    }
 }
 
-void printResultOperator(char Operator)
+void printResultOperator(char Op)
 {
    printf(
          "| Operator  |    %c    |    %c    |      %c    |         %c         |",
@@ -133,5 +135,5 @@ void printResultOperator(char Operator)
 
 int askAgain()
 {
-
+return 'y';
 }
