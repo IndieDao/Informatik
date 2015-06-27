@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1434811141 source:c:\users\ingo\dropbox\studium\informatik\ueb08\ueb08\main.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+
+1434118516 c:\users\ingo\dropbox\studium\informatik\ueb08\ueb08\tools.h
+
+1434116169 c:\users\ingo\dropbox\studium\informatik\ueb08\ueb08\escapesequenzen.h
+
