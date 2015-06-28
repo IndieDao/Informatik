@@ -56,11 +56,11 @@ void printInputNumber(int Zeile, short Zahl)
    printf("%7i                                       |", Zahl);
 }
 
-char getOperator(int Zeile)
+char getOperator()
 {
    int GueltigeEingabe;
    char Op;
-   POSITION(5, 18); //Eingabezeile l�schen
+   POSITION(5, 18); //Eingabezeile loeschen
    printf("                                              ");
    POSITION(5, 18); //Eingabeposition
    do
@@ -68,72 +68,88 @@ char getOperator(int Zeile)
       GueltigeEingabe = scanf("%1c[|^<>&~]", &Op);
       clearBuffer();
    } while (!GueltigeEingabe);
-   printInputOperator (Op);
+   printInputOperator(Op);
    return Op;
 }
 
-void printInputOperator(int Zeile, char Op)
+void printInputOperator(char Op)
 {
-   POSITION(Zeile, 18);
-   if (Op == '<')
+   POSITION(5, 18);
+   switch (Op)
    {
-      Op = '<<';
-   }
-   else if (Op == '>')
-   {
-      Op = '>>';
-   }
-   printf("%c                                      ", Op);
+   case '<':
+      Op = '«';
+      break;
+   case '>':
+      Op = "»";
+      break;
+   default = break;
+}
+printf("%c                                      ", Op);
 }
 
 short calcResult(short Z1, short Z2, char Op)
 {
-   switch (Op)
-   {
-   case '&':
-      return (Z1 & Z2);
-   case '|':
-      return (Z1 | Z2);
-   case '<':
-      return (Z1 << Z2);
-   case '>':
-      return (Z1 >> Z2);
-   case '^':
-      return (Z1 ^ Z2);
-   case '~':
-      return (~Z1);
-   }
-   return;
+switch (Op)
+{
+case '&':
+   return (Z1 & Z2);
+case '|':
+   return (Z1 | Z2);
+case '«':
+   return (Z1 << Z2);
+case '»':
+   return (Z1 >> Z2);
+case '^':
+   return (Z1 ^ Z2);
+case '~':
+   return (~Z1);
+}
+return 0;
 }
 
 void printResultNumber(int Zeile, short Zahl)
 {
 
-//   printBinary();
+printBinary();
 }
 
 void printBinary(int Zeile, short Zahl)
 {
-   int i;
-   int Rest;
-   POSITION(Zeile, 62);
-   for (i = 0; i < 16; i++)
-   {
-      Rest = Zahl % 2;
-      Zahl = Zahl / 2;
-      printf("%i", Rest);
-      RIGHT(2);
-   }
+int i;
+int Rest;
+POSITION(Zeile, 62);
+for (i = 0; i < 16; i++)
+{
+   Rest = Zahl % 2;
+   Zahl = Zahl / 2;
+   printf("%i", Rest);
+   RIGHT(2);
+}
 }
 
 void printResultOperator(char Op)
 {
-   printf(
-         "| Operator  |    %c    |    %c    |      %c    |         %c         |",
-         Op, Op, Op, Op);
+printf("| Operator  |    %c    |    %c    |      %c    |         %c         |",
+      Op, Op, Op, Op);
 }
 
 int askAgain()
 {
-return 'y';
+char W = 'j';
+do
+{
+   printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
+   scanf("%c", &W);
+   clearBuffer();
+} while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
+
+if (W != 'j' && W != 'J' && W != 'n' && W != 'N')
+   printf("Geben Sie bitte j oder n ein!\n");
+else if (W == 'j' || W == 'J')
+{
+   return 1;
 }
+return 0;
+}
+
