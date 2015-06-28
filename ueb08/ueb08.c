@@ -10,7 +10,7 @@
 
 int main()
 {
-   int Zahl1, Zahl2, result, Dez, Okt, Hex, Bin;
+   int Zahl1, Zahl2, Result, Bin;
    char Op, Dummy;
    do
    {
@@ -18,11 +18,11 @@ int main()
 
       Zahl1 = getNumber(4);
 
-      Op = getOperator(5);
+      Op = getOperator();
 
       Zahl2 = getNumber(6);
 
-      result = calcResult(Zahl1, Zahl2, Op);
+      Result = calcResult(Zahl1, Zahl2, Op);
 
       printResultNumber(11, Zahl1);
 
@@ -30,8 +30,9 @@ int main()
 
       printResultNumber(13, Zahl2);
 
-      printResultNumber(15, result);
+      printResultNumber(15, Result);
 
    } while (askAgain());
 
+   return 0;
 }
