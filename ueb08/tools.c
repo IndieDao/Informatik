@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stddef.h>
 #include "tools.h"
 #include "escapesequenzen.h"
 
@@ -6,23 +7,23 @@ void printFrame()
 {
    CLEAR;
    HOME;
-   printf("|--------------------------------------------------------------|");
-   printf("| Bitoperatoren-Rechner                                        |");
-   printf("|                                                              |");
-   printf("| Eingabe Zahl 1:                                              |");
-   printf("| Operator:                                                    |");
-   printf("| Eingabe Zahl 2:                                              |");
-   printf("|                                                              |");
-   printf("|--------------------------------------------------------------|");
-   printf("|                                                              |");
-   printf("|           |  dez.   | okt.    |  hex.    | Binaerdarstellung |");
-   printf("| Zahl 1    |         |         |          |                   |");
-   printf("| Operator  |         |         |          |                   |");
-   printf("| Zahl 2    |         |         |          |                   |");
-   printf("| ------------------------------------------------------------ |");
-   printf("| Ergebnis  |         |         |          |                   |");
-   printf("|                                                              |");
-   printf("|--------------------------------------------------------------|");
+   printf("|--------------------------------------------------------------|\n");
+   printf("| Bitoperatoren-Rechner                                        |\n");
+   printf("|                                                              |\n");
+   printf("| Eingabe Zahl 1:                                              |\n");
+   printf("| Operator:                                                    |\n");
+   printf("| Eingabe Zahl 2:                                              |\n");
+   printf("|                                                              |\n");
+   printf("|--------------------------------------------------------------|\n");
+   printf("|                                                              |\n");
+   printf("|           |  dez.   | okt.    |  hex.    | Binaerdarstellung |\n");
+   printf("| Zahl 1    |         |         |          |                   |\n");
+   printf("| Operator  |         |         |          |                   |\n");
+   printf("| Zahl 2    |         |         |          |                   |\n");
+   printf("| ------------------------------------------------------------ |\n");
+   printf("| Ergebnis  |         |         |          |                   |\n");
+   printf("|                                                              |\n");
+   printf("|--------------------------------------------------------------|\n");
 }
 
 void clearBuffer()
@@ -43,6 +44,12 @@ short getNumber(int Zeile)
    {
       GueltigeEingabe = scanf("%hi", &Zahl);
       clearBuffer();
+      if (!GueltigeEingabe)
+      {
+         POSITION(Zeile, 17);
+         printf("           erneute Eingabe!                    |");
+         POSITION(Zeile, 17);
+      }
    } while (!GueltigeEingabe);
 //	POSITION(Zeile, 18); //Eingabeposition
 //	printf("%7i                                       |", );
@@ -60,13 +67,19 @@ char getOperator()
 {
    int GueltigeEingabe;
    char Op;
-   POSITION(5, 18); //Eingabezeile loeschen
-   printf("                                              ");
-   POSITION(5, 18); //Eingabeposition
+   POSITION(5, 17); //Eingabezeile loeschen
+   printf("                                               ");
+   POSITION(5, 17); //Eingabeposition
    do
    {
-      GueltigeEingabe = scanf("%1c[|^<>&~]", &Op);
+      GueltigeEingabe = scanf("%[|<>&~^]", &Op);
       clearBuffer();
+      if (!GueltigeEingabe)
+      {
+         POSITION(5, 17);
+         printf("           erneute Eingabe!                    |");
+         POSITION(5, 17);
+      }
    } while (!GueltigeEingabe);
    printInputOperator(Op);
    return Op;
@@ -74,82 +87,78 @@ char getOperator()
 
 void printInputOperator(char Op)
 {
-   POSITION(5, 18);
-   switch (Op)
-   {
-   case '<':
-      Op = '«';
-      break;
-   case '>':
-      Op = "»";
-      break;
-   default = break;
-}
-printf("%c                                      ", Op);
+   POSITION(5, 17);
+   if (Op == '<' || Op == '>')
+      printf("%c%c                                     ", Op, Op);
+   else
+      printf("%c                                      ", Op);
 }
 
 short calcResult(short Z1, short Z2, char Op)
 {
-switch (Op)
-{
-case '&':
-   return (Z1 & Z2);
-case '|':
-   return (Z1 | Z2);
-case '«':
-   return (Z1 << Z2);
-case '»':
-   return (Z1 >> Z2);
-case '^':
-   return (Z1 ^ Z2);
-case '~':
-   return (~Z1);
-}
-return 0;
+   switch (Op)
+   {
+   case '&':
+      return (Z1 & Z2);
+   case '|':
+      return (Z1 | Z2);
+   case '<':
+      return (Z1 << Z2);
+   case '>':
+      return (Z1 >> Z2);
+   case '^':
+      return (Z1 ^ Z2);
+   case '~':
+      return (~Z1);
+   }
+   return 0;
 }
 
 void printResultNumber(int Zeile, short Zahl)
 {
-
-printBinary();
+   POSITION(Zeile, 13);
+   printf("%9i %#9o %#9X                 |", Zahl, Zahl, Zahl);
+   printBinary(Zeile, Zahl);
+   printf("\n");
 }
 
 void printBinary(int Zeile, short Zahl)
 {
-int i;
-int Rest;
-POSITION(Zeile, 62);
-for (i = 0; i < 16; i++)
-{
-   Rest = Zahl % 2;
-   Zahl = Zahl / 2;
-   printf("%i", Rest);
-   RIGHT(2);
-}
+   int i;
+   int Rest;
+   POSITION(Zeile, 62);
+   for (i = 0; i < 16; i++)
+   {
+      Rest = Zahl % 2;
+      Zahl = Zahl / 2;
+      printf("%i", Rest);
+      LEFT(2);
+   }
 }
 
 void printResultOperator(char Op)
 {
-printf("| Operator  |    %c    |    %c    |      %c    |         %c         |",
-      Op, Op, Op, Op);
+   printf(
+         "| Operator  |    %c    |    %c    |    %c     |        %c          \n",
+         Op, Op, Op, Op);
 }
 
 int askAgain()
 {
-char W = 'j';
-do
-{
-   printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
-   scanf("%c", &W);
-   clearBuffer();
-} while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
-
-if (W != 'j' && W != 'J' && W != 'n' && W != 'N')
-   printf("Geben Sie bitte j oder n ein!\n");
-else if (W == 'j' || W == 'J')
-{
-   return 1;
-}
-return 0;
+   char W = 'j';
+   do
+   {
+      POSITION(18, 0);
+      printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
+      scanf("%c", &W);
+      clearBuffer();
+      if (W != 'j' && W != 'J' && W != 'n' && W != 'N')
+         printf("\n j | n reicht!");
+      else if (W == 'j' || W == 'J')
+      {
+         return 1;
+      }
+   } while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
+   return 0;
 }
 

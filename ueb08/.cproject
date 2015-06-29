@@ -38,6 +38,7 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.toolchain.gnu.base.2002543433.637101389" name="makefile" rcbsApplicability="disable" resourcePath="makefile" toolsToInvoke=""/>
 					<fileInfo id="cdt.managedbuild.toolchain.gnu.base.2002543433.576814480" name="tools.c" rcbsApplicability="disable" resourcePath="tools.c" toolsToInvoke="cdt.managedbuild.tool.gnu.c.compiler.base.1214991917">
 						<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1214991917" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
 							<option id="gnu.c.compiler.option.include.paths.526300850" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
@@ -46,7 +47,6 @@
 							<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1529419455" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="cdt.managedbuild.toolchain.gnu.base.2002543433.637101389" name="makefile" rcbsApplicability="disable" resourcePath="makefile" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>

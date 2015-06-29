@@ -10,8 +10,8 @@
 
 int main()
 {
-   int Zahl1, Zahl2, Result, Bin;
-   char Op, Dummy;
+   int Zahl1, Zahl2, Result;
+   char Op;
    do
    {
       printFrame();
