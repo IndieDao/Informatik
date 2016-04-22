@@ -1,0 +1,38 @@
+Trenchcoat: Schuhe Handy Pullover
+	@echo Trenchcoat anziehen
+	@touch $@
+
+Struempfe:
+	@echo Struempfe anziehen
+	@touch $@
+
+Unterhose:
+	@echo Unterhose anziehen
+	@touch $@
+
+Unterhemd:
+	@echo Unterhemd anziehen
+	@touch $@
+
+Hemd: Unterhemd
+	@echo Hemd anziehen
+	@touch $@
+
+Hose: Unterhose Hemd
+	@echo Hose anziehen
+	@touch $@
+
+Schuhe: Struempfe Hose
+	@echo Schuhe anziehen
+	@touch $@
+
+Handy: Hose
+	@echo Handy schnappen
+	@touch $@
+
+Pullover: Hemd
+	@echo Pullover anziehen
+	@touch $@
+
+Nackt: 
+	rm Struempfe Unterhose Unterhemd Hemd Hose Schuhe Handy Pullover Trenchcoat -f
