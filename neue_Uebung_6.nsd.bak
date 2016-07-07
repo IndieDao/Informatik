@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="http://structorizer.fisch.lu/" version="3.24-11" text="&#34;Nassi-Schneider Diagramm fuer Übung 6&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Variablen:&#34;,&#34;Dummy: char fuer Tastaturpuffer Loeschung&#34;,&#34;Menuewahl: Ganze Zahlen&#34;,&#34;Eingabe: Gabze Zahl (Wahrheitswert)&#34;,&#34;X, X_Von, X_Bis, X_Schrittweite: Fließkommazahlen)&#34;" comment="" color="ffffff" rotated="0"></instruction>
+		<repeat text="&#34;Solange Menuewahl ungleich 9&#34;" comment="" color="ffff80">
+			<qRepeat>
+				<instruction text="&#34;Menü ausgeben&#34;" comment="" color="ffffff" rotated="0"></instruction>
+				<repeat text="&#34;Solange, bis Eingabe = true&#34;" comment="&#34;&#34;" color="ffff80">
+					<qRepeat>
+						<instruction text="&#34;&#34;,&#34;Menuewahl &#60;- Zahl einlesen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+						<alternative text="&#34;wenn Zahl für Menuewahl eingegeben&#34;" comment="" color="c0c0c0">
+							<qTrue>
+								<case text="&#34;Menuewahl&#34;,&#34;1&#34;,&#34;2&#34;,&#34;3&#34;,&#34;9&#34;,&#34;sonst&#34;" comment="" color="ffffff">
+									<qCase>
+										<instruction text="&#34;Ausgabe &#34;&#34;SINUS&#34;&#34;&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Ausgabe &#34;&#34;Cosinus&#34;&#34;&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Ausgabe &#34;&#34;TANGENS&#34;&#34;&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Ausgabe &#34;&#34;PROGRAMMENDE&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Eingabe &#60;- false&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+								</case>
+							</qTrue>
+							<qFalse>
+							</qFalse>
+						</alternative>
+					</qRepeat>
+				</repeat>
+				<alternative text="&#34;Menuewahl ungleich 9?&#34;" comment="&#34;Außer bei Programmende&#34;" color="c0c0c0">
+					<qTrue>
+						<repeat text="&#34;Solange, bis Eingabe = true&#34;" comment="&#34;Startwerte erfragen&#34;" color="ffff80">
+							<qRepeat>
+								<instruction text="&#34;X_Von &#60;- Startwert erfragen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+							</qRepeat>
+						</repeat>
+						<repeat text="&#34;Solange, bis Eingabe true&#34;" comment="&#34;Endwerte erfragen&#34;" color="ffff80">
+							<qRepeat>
+								<instruction text="&#34;X_Bis &#60;- Endwert erfragen&#34;" comment="" color="ffffff" rotated="0"></instruction>
+								<alternative text="&#34;Ist X_Von größer X_Bis ?&#34;" comment="&#34;Ausgabegrenzen prüfen&#34;" color="c0c0c0">
+									<qTrue>
+										<instruction text="&#34;Eingabe &#60;- false&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qTrue>
+									<qFalse>
+									</qFalse>
+								</alternative>
+							</qRepeat>
+						</repeat>
+						<repeat text="&#34;Solange, bis Eingabe = true&#34;" comment="&#34;Schrittweite erfragen&#34;" color="ffff80">
+							<qRepeat>
+								<instruction text="&#34;X_Schrittweite &#60;- Schrittweite erfragen&#34;" comment="&#34;&#34;" color="ffffff" rotated="0"></instruction>
+							</qRepeat>
+						</repeat>
+						<for text="&#34;Zaehlschleife&#34;,&#34;Fuer X_Von &#60; X_Bis in X_Schrittweite Schritten &#34;" comment="&#34;&#34;" counterVar="dummy_counter" startValue="Zaehlschleife Fuer X_Von &#60; X_Bis in X_Schrittweite Schritten" stepConst="1" style="FREETEXT" color="80ff80">
+							<qFor>
+								<case text="&#34;aufgrund Menuewahl&#34;,&#34;1&#34;,&#34;2&#34;,&#34;3&#34;,&#34;%&#34;" comment="&#34;&#34;" color="ffffff">
+									<qCase>
+										<instruction text="&#34;Ausgabe sinus&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Ausgabe cosinus&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+										<instruction text="&#34;Ausgabe tangens&#34;" comment="" color="ffffff" rotated="0"></instruction>
+									</qCase>
+									<qCase>
+									</qCase>
+								</case>
+							</qFor>
+						</for>
+						<instruction text="&#34;Aufforderung zum Drücken der Eingabetaste ausgeben&#34;" comment="" color="ffffff" rotated="0"></instruction>
+					</qTrue>
+					<qFalse>
+					</qFalse>
+				</alternative>
+			</qRepeat>
+		</repeat>
+	</children>
+</root>

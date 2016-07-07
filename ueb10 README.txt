@@ -1,0 +1,2 @@
+Es ist noch ein "komischer" Fehler enthalten, den ich nicht behoben habe und auch nicht beheben musste. Dieser bewirkt "komische" Fehlermeldungen beim Beenden des Programmes. Wahrscheinlich übergebe ich irgendwo aus Versehen in einer Schleife nicht Pointer auf Einträge einer Liste, sondern immer alle Einträge der Liste / die Inhalte aller Einträge der Liste.
+Da also bitte aufpassen.

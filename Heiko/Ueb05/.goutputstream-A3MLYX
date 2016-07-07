@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+
+int main()
+{
+  int  usrInputInt;
+  char usrInputChar, foo='a';
+
+  do
+  {
+   
+    printf("Bitte geben Sie eine ganze Zahl ein: ");
+    
+    //Einlesen der Zahl
+    if ((scanf("%d",&usrInputInt))!=1)
+    {
+      //Wenn kein Integer eingegeben wurde
+      printf("Falsche Eingabe! Die Eingabe ist keine (ganze) Zahl!\n");
+
+      scanf("%c",&foo);  //leeren des Puffers
+      printf("Mark3\n_%c_\n",foo);
+      while( foo != '\n' );
+      {
+	printf("Mark4\n");
+	//scanf("%c",&foo);
+	scanf("%c",&foo);
+      }
+      printf("mark5\n");
+      //Nochmal? --> Springt zu MARK
+    }
+    else
+    {
+      printf("Sie haben die ganze Zahl %i eingegeben\n",usrInputInt);
+      scanf("%c",&foo);  //Puffer leeren
+    }
+
+    //MARK
+    
+    printf("Moechten Sie noch einmal (j/n)?\n");
+    scanf("%c",&usrInputChar);
+
+
+    while ( (usrInputChar != 'j') && (usrInputChar != 'n') )
+    {
+      printf("Falsche Eingabe! Bitte 'j' oder 'n' eingeben!\n");
+      foo='a';
+      while (foo != '\n')
+      {
+	printf("MARK\n");
+	scanf("%c",&foo);
+      }
+      //scanf("%c",&usrInputChar);
+    }
+    printf("Mark2\n");
+  } while (usrInputChar != 'n');
+
+  printf("Programm wird beended.\n");
+
+  return 0;
+}
+      

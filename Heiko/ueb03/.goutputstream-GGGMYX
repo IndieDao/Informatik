@@ -1,0 +1,14 @@
+% Übung Elektrische Systeme 1 
+% Aufgabe 14
+% Radde, 835333
+
+clear
+home
+close all
+
+%geg.:  siehe Aufgabenblatt bzw. Notizen vom 12.05.15
+%ges.:  Ersatzspannungs- und Ersatzstromquelle (vgl. Aufgabenblatt für
+%       Positionen der Klemmen A und B
+
+%geg. Größen:
+R1 = 5

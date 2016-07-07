@@ -8,7 +8,9 @@ void printFrame()
    CLEAR;
    HOME;
    printf("|--------------------------------------------------------------|\n");
-   printf("| Bitoperatoren-Rechner                                        |\n");
+   INVERSE;
+   printf("  Bitoperatoren-Rechner      |&<>~^                             \n");
+   ATTRIBUTE_OFF;
    printf("|                                                              |\n");
    printf("| Eingabe Zahl 1:                                              |\n");
    printf("| Operator:                                                    |\n");
@@ -46,13 +48,11 @@ short getNumber(int Zeile)
       clearBuffer();
       if (!GueltigeEingabe)
       {
-         POSITION(Zeile, 17);
-         printf("           erneute Eingabe!                    |");
-         POSITION(Zeile, 17);
+         POSITION(Zeile, 25);
+         printf("erneute Eingabe!                       |");
+         POSITION(Zeile, 18);
       }
    } while (!GueltigeEingabe);
-//	POSITION(Zeile, 18); //Eingabeposition
-//	printf("%7i                                       |", );
    printInputNumber(Zeile, Zahl);
    return Zahl;
 }
@@ -67,18 +67,18 @@ char getOperator()
 {
    int GueltigeEingabe;
    char Op;
-   POSITION(5, 17); //Eingabezeile loeschen
-   printf("                                               ");
-   POSITION(5, 17); //Eingabeposition
+   POSITION(5, 20); //Eingabezeile loeschen
+   printf("                                            | ");
+   POSITION(5, 20); //Eingabeposition
    do
    {
       GueltigeEingabe = scanf("%[|<>&~^]", &Op);
       clearBuffer();
       if (!GueltigeEingabe)
       {
-         POSITION(5, 17);
-         printf("           erneute Eingabe!                    |");
-         POSITION(5, 17);
+         POSITION(5, 25);
+         printf("erneute Eingabe!                       |");
+         POSITION(5, 20);
       }
    } while (!GueltigeEingabe);
    printInputOperator(Op);
@@ -87,7 +87,7 @@ char getOperator()
 
 void printInputOperator(char Op)
 {
-   POSITION(5, 17);
+   POSITION(5, 20);
    if (Op == '<' || Op == '>')
       printf("%c%c                                     ", Op, Op);
    else
@@ -138,8 +138,10 @@ void printBinary(int Zeile, short Zahl)
 
 void printResultOperator(char Op)
 {
-   printf(
-         "| Operator  |    %c    |    %c    |    %c     |        %c          \n",
+    if (Op == '<' || Op == '>')
+   printf("| Operator  |    %c%c   |     %c%c   |    %c%c   |    %c%c        \n", Op, Op, Op, Op, Op, Op, Op, Op);
+   else
+   printf("| Operator  |    %c    |    %c    |    %c     |        %c          \n",
          Op, Op, Op, Op);
 }
 
@@ -161,4 +163,3 @@ int askAgain()
    } while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
    return 0;
 }
-

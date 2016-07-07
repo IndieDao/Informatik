@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include "tools.h"
+#include "grafics.h"
+#include "escapesequenzen.h"
+#include "ini.h"
+
+
+// alle int to unsigned int
+
+
+
+int main()
+{
+  unsigned char ascii[MAXZEICHEN];
+  int countOfAscii[256];
+  int charCount = 0;  //charCount Stelle des letzten Zeichens in CharCount
+
+  CLEAR;
+  
+  clearArray(countOfAscii, sizeof(countOfAscii));
+
+  printHeader();
+  do
+    charCount = getString(ascii);
+  while (charCount == 0);
+ 
+  countCharsPerType(ascii, countOfAscii, &charCount);
+
+  printResults(countOfAscii);
+  
+  return 0;
+}
