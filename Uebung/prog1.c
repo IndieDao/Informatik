@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 //int Print(char *);
 //int GetMax(int, int);
@@ -9,48 +10,45 @@
 //int ZaehleZiffern(char *);
 int Strlen(char *);
 
-//void Trim( char *  );
-int countSpace(char [][] );
+void Trim( char *  );
+int countSpace(char *);
 
 int i, j;
 
-
-int countSpaces(char *Text[][j])
+int countSpaces(char *text)
 {
-    int leer=0;
-
-    for (i = 0 ; i < 10 ; i++ )
-    {
-        for (j = 0 ; j <= 50; j++)
-            {
-                if (Text[i][j] == ' ')
-                    leer ++;
-            }
-    }
-return leer;
+    int Z = 0;
+   while(*text++)
+   {
+       if (*text == ' ')
+           Z++;
+   }
+   return Z;
 }
 
-
-void Trim(char (*text)[j])
+void Trim(char *text)
 {
+    int end = Strlen(text) -1;
 
-    for(j = 49; j<= 0 ; j--)
+    while ((end >= 0) && (*(text+end)==' '))
     {
-        while(*(text[j]) == ' ')
-           *(text[j]) = '\0';
+    *(text+end) = '\0';
+    end--;
     }
 }
 
 int main()
 {
-    char Text[10][50] = {"Dies ist ein langer        ", "Text, der in mehreren       ", "Zeilen untergebracht      ", "ist und der auch noch       ", "in manchen Zeilen mehrere", "Leerzeichen am Ende       ", "beinhaltet! Die Leer-        ","zeichen dieses Textes       ", "sollen gezaehlt werden!       ", "                     "};
+    char Text[10][50] = {"Dies ist ein langer           ", "Text, der in mehreren       ", "Zeilen untergebracht          ", "ist und der auch noch            ", "in manchen Zeilen mehrere", "Leerzeichen am Ende       ", "beinhaltet! Die Leer-        ","zeichen dieses Textes       ", "sollen gezaehlt werden!       ", "                     "};
 
-int i = 0;
 int leer = 0;
+for (i = 0; i<= 10; i++)
+    {
+        Trim(*(Text+i));
+        leer += countSpaces(*(Text+i));
+    }
 
-for (i = 0; i < 10; i++)
-    Trim(Text[i][j]);
-printf("\nIn dem Text sind %i Leerzeichen enthalten!\n", countSpaces(Text));
+printf("\nIn dem Text sind %i Leerzeichen enthalten!\n", leer);
 
 /*    char *Text = "Dieser 1 Text hat 5 Ziffern: 123!";
 
@@ -98,17 +96,14 @@ int a = -1;
 
 int Strlen(char *text)
 {
-int str = 0;
 int len = 0;
 
-while(*(text + str++) != '\0')
+while(*(text++) != '\0')
     {   
         len++;
     }
 return len;
 }
-
-
 
 /*
 int ZaehleZiffern(char *text)
@@ -154,5 +149,3 @@ int GetMax(int i, int j)
     return((i>j) ? j : i );
 }
 */
-
-

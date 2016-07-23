@@ -8,9 +8,9 @@ int i = 0 ;
 //Eingabemaske
 void printInputMask()
 {
-CLEAR;
-HOME;
-BLINK;
+    CLEAR;
+    HOME;
+    BLINK;
     printf("=====================\n");
     printf("||                 ||\n");
     printf("||  ");
@@ -20,7 +20,7 @@ BLINK;
     printf(" ||\n");
     printf("||                 ||\n");
     printf("=====================\n\n");
-ATTRIBUTE_OFF;
+    ATTRIBUTE_OFF;
     printf("Geben Sie bitte den Text ein (mind. 1 Zeichen / max. 150 Zeichen),\ndessen Zeichen gezaehlt werden sollen:\n\n");
 }
 
@@ -38,13 +38,7 @@ int Strlen(char *str)
 //Text einlesen
 void getText(unsigned char *text)
 {
-    int R = 1;
-    //Array nullen
-    for( i=0 ; i < MAX ; i++)
-    {
-        *(text + i) = '\0';
-    }
-    //Text einlesen
+    *text = 0;
     do
     {
         POSITION(10, 1);
@@ -60,7 +54,7 @@ int countInAscii(unsigned char *text, unsigned int *anzahl)
     
     for( i=0 ; i < ASCIIMAX ; i++)
     {
-        *(anzahl + i) = '\0';
+        *(anzahl + i) = 0;
     }
 
     i = 0;
@@ -127,23 +121,18 @@ void clearBuffer()
 //Programm wiederholen
 int askAgain()
 {
-   char W = 'j';
-  do
-   {
-     // POSITION(Row, Col);
-      printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
-      //clearBuffer();
-      scanf("%c", &W);
-      if (W != '\n')
-          clearBuffer();
-      if (W != 'j' && W != 'J' && W != 'n' && W != 'N')
-         printf("\n j | n reicht!\n");
-      else if (W == 'j' || W == 'J')
-      {
-         return 1;
-      }
-   }while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
-
-   return 0;
+char W;
+printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
+while (!scanf("%[jJnN]", &W))
+    {
+        UP_LINE;
+        CLEAR_LINE;
+        printf("Moechten Sie noch einmal (j/n) ");
+        clearBuffer();
+    }
+    if (W == 'j' || W =='J')
+    {
+        return 1;
+    }
+return 0;
 }
-

@@ -13,19 +13,17 @@ void clearBuffer()
 
 int askAgain(int Row, int Col)
 {
-   char W = 'j';
-  do
-   {
+char W;
+while(!scanf("%[jJnN]", &W))
+{
       POSITION(Row, Col);
+      CLEAR_LINE;
       printf("Moechten Sie noch einmal (j/n) "); // Eingabeaufforderung
       clearBuffer();
-      scanf("%c", &W);
-      if (W != 'j' && W != 'J' && W != 'n' && W != 'N')
-         printf("\n j | n reicht!");
-      else if (W == 'j' || W == 'J')
-      {
-         return 1;
-      }
-   }while (W != 'j' && W != 'J' && W != 'n' && W != 'N');
-   return 0;
+}
+    if (W == 'j' || W == 'J')
+    {
+        return 1;
+    }
+    return 0;
 }

@@ -1,6 +1,6 @@
 CC = gcc -Wall
 PRG = neu11
-OBJ = neu11.o tools.o
+OBJ = neu11.o tools.o text.o
 
 $(PRG): $(OBJ)
 	$(CC) -o $@ $^ -lm
@@ -10,6 +10,9 @@ neu11.o: neu11.c
 
 tools.o: tools.h
 	$(CC) -c tools.c #-fno-stack-protector
+
+text.o: text.h
+	$(CC) -c text.c #-fno-stack-protector
 
 all: clean $(PRG) run
 
