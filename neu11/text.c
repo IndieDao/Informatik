@@ -8,12 +8,11 @@
 void getText(char *Anweisung, char *EingabeSatz)
 {
     printf(Anweisung);
-
     do
     {
         POSITION(4, 1);
         fgets(EingabeSatz, 200, stdin);
-    } while (*(EingabeSatz) == 10);
+   } while (*(EingabeSatz) == 10);
 }
 
 void getWidth(char *Anweisung, int minBreite, int maxBreite, int *EingabeBreite)

@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "datastructure.h"
+#include "datetime.h"
+//#include "tools.h"
+
+//trennt die Eingegebene Zeichenkette bei den ":", und schreibt den Zwischenstring in die angelegte Datumsstruktur
+int getDateFromString(char *Eingabe, TDate *Datum)
+{
+    char *tmp;
+    //schreibe String bis zum ersten Delimiter (als Integer) in die DatumsStruktur
+    Datum->Day     = atoi(strtok_r(Eingabe, ":", &tmp));
+    //schreibe String nun vom nächstem Char bis zum nächsten Delimiter in die DatumsStruktur
+    Datum->Month   = atoi(strtok_r(NULL, ":", &tmp));
+    Datum->Year    = atoi(strtok_r(NULL, ":", &tmp));
+
+    //ruft Pruefungs-Unterfunktion auf
+    if (isDateValid(Datum->Day, Datum->Month, Datum->Year))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+};
+
+//trennt die Eingegebene Zeichenkette bei den ":", und schreibt den Zwischenstring in die angelegte Zeitstruktur
+int getTimeFromString(char *Eingabe, TTime *Zeit)
+{
+    char *tmp;
+
+    Zeit->Hour      = atoi(strtok_r(Eingabe, ":", &tmp));
+    Zeit->Minute    = atoi(strtok_r(NULL, ":", &tmp));
+    Zeit->Second    = atoi(strtok_r(NULL, ":", &tmp));
+
+     //ruft Pruefungs-Unterfunktion auf
+    if (isTimeValid(Zeit->Hour, Zeit->Minute, Zeit->Second))
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+  return 0;
+
+};
+
+//gibt bei korrekter Zeitangabe "true" zurück, ansonsten false
+int isTimeValid(unsigned int Sekunde, unsigned int Minute, unsigned int Stunde)
+{
+    int Erg = 1;
+    if((Sekunde < 1) || (Sekunde > 60) || (Minute < 1) || (Minute > 60) || ( Stunde < 1) || (Stunde > 24) )
+    {
+       Erg = 0;
+    }
+    return Erg;
+};
+
+//gibt bei Schaltjahr "true" zurück, ansonsten false
+int isLeapYear(int Jahr)
+{
+    int Erg = 0;
+    if ((Jahr % 400) == 0){
+        Erg = 1;
+    }else if ((Jahr % 100) == 0){
+        Erg = 0;
+    }else if ((Jahr % 4) == 0){
+        Erg = 1;
+    }
+  return Erg;
+};
+
+//gibt bei korrektem Datum "true" zurück, ansonsten false
+int isDateValid(unsigned int Tag, unsigned int Monat, int Jahr)
+{
+    int Erg = 1;
+    int TageImMonat[12] = {  31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+    if (isLeapYear(Jahr))
+    {
+            TageImMonat[1] = 29;
+    }
+    else
+    {
+            TageImMonat[1] = 28;
+    }
+
+    if ((Monat < 1) || (Monat > 12))
+    {
+        Erg = 0;
+    }
+    if ((Tag <= 0) || (Tag > TageImMonat[Monat-1]))
+    {
+        Erg = 0;
+    }
+    return Erg;
+};
