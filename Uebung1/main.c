@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "datastructure.h"
 #include "datetime.h"
 #include "tools.h"
@@ -10,10 +9,11 @@ int main()
    TDate Date;
    TTime Time;
    char Input[20];
+
    do
    {
       clearScreen();
-      printf("Geben Sie bitte ein gueltiges Datum ein (dd:mm:yyyy): ");
+      printf("Geben Sie bitte ein gueltiges Datum ein (dd.mm.yyyy): ");
       *Input = '\0';
       scanf("%19[^\n]", Input);
       clearBuffer();

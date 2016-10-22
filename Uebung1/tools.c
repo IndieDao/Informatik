@@ -1,9 +1,19 @@
 #include <stdio.h>
 #include "escapesequenzen.h"
 #include "tools.h"
-#include <string.h>
 
 //int i = 0 ;
+
+int Strlen(char *str)
+{
+int len = 0;
+
+while(*(str++) != '\0')
+    {
+        len++;
+    }
+    return len;
+}
 
 //Programm wiederholen
 int askAgain(char *Frage)
