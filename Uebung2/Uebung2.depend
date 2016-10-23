@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1477214573 source:/media/schnubio/Studium/git/Informatik/Uebung2/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1477208905 /media/schnubio/Studium/git/Informatik/Uebung2/datastructure.h
+
+1477213251 /media/schnubio/Studium/git/Informatik/Uebung2/datetime.h
+
+1477208645 /media/schnubio/Studium/git/Informatik/Uebung2/tools.h
+
+1477217099 source:/media/schnubio/Studium/git/Informatik/Uebung2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+
+1477215693 source:/media/schnubio/Studium/git/Informatik/Uebung2/tools.c
+	<stdio.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1476091821 /media/schnubio/Studium/git/Informatik/Uebung2/escapesequenzen.h
+
+1477217106 source:/media/schnubio/Studium/git/Informatik/Uebung2/menu.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+
+1477211612 source:/media/schnubio/Studium/git/Informatik/Uebung2/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1477206867 /media/schnubio/Studium/git/Informatik/Uebung2/calendar.h
+
+1477217569 /media/schnubio/Studium/git/Informatik/Uebung2/menu.h
+

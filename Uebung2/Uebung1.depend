@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1477073300 source:/media/schnubio/Studium/git/Informatik/Uebung1/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1477043734 source:/media/schnubio/Studium/git/Informatik/Uebung1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1476097680 /media/schnubio/Studium/git/Informatik/Uebung1/datastructure.h
+
+1476092420 /media/schnubio/Studium/git/Informatik/Uebung1/datetime.c
+
+1476875323 /media/schnubio/Studium/git/Informatik/Uebung1/tools.h
+
+1476877869 source:/media/schnubio/Studium/git/Informatik/Uebung1/tools.c
+	<stdio.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1476091821 /media/schnubio/Studium/git/Informatik/Uebung1/escapesequenzen.h
+
+1477043819 /media/schnubio/Studium/git/Informatik/Uebung1/datetime.h
+
+1476875332 /media/schnubio/Studium/git/Informatik/Uebung1/tools.c
+	<stdio.h>
+	"escapesequenzen.h"
+	"tools.h"
+
