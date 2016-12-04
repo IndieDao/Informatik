@@ -1,6 +1,0 @@
-#ifndef CALENDAR_H_INCLUDED
-#define CALENDAR_H_INCLUDED
-
-
-
-#endif // CALENDAR_H_INCLUDED

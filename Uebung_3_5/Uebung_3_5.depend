@@ -1,0 +1,89 @@
+# depslib dependency file v1.0
+1479982951 source:/media/schnubio/Studium/git/Informatik/Uebung_3/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1479848594 /media/schnubio/Studium/git/Informatik/Uebung_3/calendar.h
+
+1479732972 /media/schnubio/Studium/git/Informatik/Uebung_3/datastructure.h
+
+1480013560 /media/schnubio/Studium/git/Informatik/Uebung_3/datetime.h
+
+1480013560 /media/schnubio/Studium/git/Informatik/Uebung_3/tools.h
+
+1479982145 source:/media/schnubio/Studium/git/Informatik/Uebung_3/database.c
+
+1479982684 source:/media/schnubio/Studium/git/Informatik/Uebung_3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+
+1478260261 /media/schnubio/Studium/git/Informatik/Uebung_3/menu.h
+
+1479918472 source:/media/schnubio/Studium/git/Informatik/Uebung_3/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+
+1479591033 /media/schnubio/Studium/git/Informatik/Uebung_3/escapesequenzen.h
+
+1479982951 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+
+1479848594 /media/schnubio/Studium/git/Informatik/Uebung_3_5/calendar.h
+
+1479732972 /media/schnubio/Studium/git/Informatik/Uebung_3_5/datastructure.h
+
+1480013178 /media/schnubio/Studium/git/Informatik/Uebung_3_5/datetime.h
+
+1480013972 /media/schnubio/Studium/git/Informatik/Uebung_3_5/tools.h
+
+1479982145 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/database.c
+
+1480014266 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1479591033 /media/schnubio/Studium/git/Informatik/Uebung_3_5/escapesequenzen.h
+
+1479982684 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+
+1478260261 /media/schnubio/Studium/git/Informatik/Uebung_3_5/menu.h
+
+1479918472 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+
+1480013972 source:/media/schnubio/Studium/git/Informatik/Uebung_3_5/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+

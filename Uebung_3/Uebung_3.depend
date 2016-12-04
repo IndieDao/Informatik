@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1480669626 source:/media/schnubio/Studium/git/Informatik/Uebung_3/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1479732972 /media/schnubio/Studium/git/Informatik/Uebung_3/datastructure.h
+
+1480019337 /media/schnubio/Studium/git/Informatik/Uebung_3/datetime.h
+
+1480013560 /media/schnubio/Studium/git/Informatik/Uebung_3/tools.h
+
+1480022426 source:/media/schnubio/Studium/git/Informatik/Uebung_3/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+
+1479848594 /media/schnubio/Studium/git/Informatik/Uebung_3/calendar.h
+
+1478260261 /media/schnubio/Studium/git/Informatik/Uebung_3/menu.h
+
+1480015495 source:/media/schnubio/Studium/git/Informatik/Uebung_3/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1480016260 source:/media/schnubio/Studium/git/Informatik/Uebung_3/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1479591033 /media/schnubio/Studium/git/Informatik/Uebung_3/escapesequenzen.h
+
+1480675258 source:/media/schnubio/Studium/git/Informatik/Uebung_3/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	<string.h>
+
+1479982145 source:/media/schnubio/Studium/git/Informatik/Uebung_3/database.c
+
