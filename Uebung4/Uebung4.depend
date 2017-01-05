@@ -1,0 +1,133 @@
+# depslib dependency file v1.0
+1481482756 source:/media/schnubio/Studium/git/Informatik/Uebung4/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1481380066 /media/schnubio/Studium/git/Informatik/Uebung4/calendar.h
+	"datastructure.h"
+
+1479732972 /media/schnubio/Studium/git/Informatik/Uebung4/datastructure.h
+
+1481398755 /media/schnubio/Studium/git/Informatik/Uebung4/datetime.h
+
+1481472751 /media/schnubio/Studium/git/Informatik/Uebung4/tools.h
+
+1481398804 source:/media/schnubio/Studium/git/Informatik/Uebung4/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1479591033 /media/schnubio/Studium/git/Informatik/Uebung4/escapesequenzen.h
+
+1480015495 source:/media/schnubio/Studium/git/Informatik/Uebung4/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1481472952 source:/media/schnubio/Studium/git/Informatik/Uebung4/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1481485619 source:/media/schnubio/Studium/git/Informatik/Uebung4/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1481483754 source:/media/schnubio/Studium/git/Informatik/Uebung4/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1478260261 /media/schnubio/Studium/git/Informatik/Uebung4/menu.h
+
+1481462316 /media/schnubio/Studium/git/Informatik/Uebung4/database.h
+
+1481482756 source:/home/fusio/Informatik/Uebung4/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1481380066 /home/fusio/Informatik/Uebung4/calendar.h
+	"datastructure.h"
+
+1479732972 /home/fusio/Informatik/Uebung4/datastructure.h
+
+1481398756 /home/fusio/Informatik/Uebung4/datetime.h
+
+1481472752 /home/fusio/Informatik/Uebung4/tools.h
+
+1479591034 /home/fusio/Informatik/Uebung4/escapesequenzen.h
+
+1483012273 source:/home/fusio/Informatik/Uebung4/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1483016295 source:/home/fusio/Informatik/Uebung4/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1483018755 source:/home/fusio/Informatik/Uebung4/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1478260262 /home/fusio/Informatik/Uebung4/menu.h
+
+1483018755 /home/fusio/Informatik/Uebung4/database.h
+
+1480015496 source:/home/fusio/Informatik/Uebung4/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1481472952 source:/home/fusio/Informatik/Uebung4/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+

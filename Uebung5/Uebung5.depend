@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1483199369 source:/home/fusio/Informatik/Uebung5/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1481380066 /home/fusio/Informatik/Uebung5/calendar.h
+	"datastructure.h"
+
+1479732972 /home/fusio/Informatik/Uebung5/datastructure.h
+
+1483091092 /home/fusio/Informatik/Uebung5/datetime.h
+
+1481472752 /home/fusio/Informatik/Uebung5/tools.h
+
+1478260262 /home/fusio/Informatik/Uebung5/menu.h
+
+1479591034 /home/fusio/Informatik/Uebung5/escapesequenzen.h
+
+1483200366 source:/home/fusio/Informatik/Uebung5/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1480015496 source:/home/fusio/Informatik/Uebung5/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1481472952 source:/home/fusio/Informatik/Uebung5/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1483188842 source:/home/fusio/Informatik/Uebung5/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1483018755 /home/fusio/Informatik/Uebung5/database.h
+
+1483193016 source:/home/fusio/Informatik/Uebung5/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1483035961 source:/home/fusio/Informatik/Uebung5/sort.c
+

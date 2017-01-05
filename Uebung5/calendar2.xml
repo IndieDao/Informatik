@@ -1,0 +1,51 @@
+<Calendar>
+ <Appointment>
+  <Date>06.12.2016</Date>
+  <Time>08:00:0000</Time>
+  <Location>-</Location>
+  <Description>Nicht zu lange schlafen</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>09.12.2016</Date>
+  <Time>08:00:0000</Time>
+  <Location>Raum H5</Location>
+  <Description>SU Informatik 2</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>16.12.2016</Date>
+  <Time>08:00:0000</Time>
+  <Location>Raum H5</Location>
+  <Description>SU Informatik 2 - letzte SU vor Weihnachten</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>16.12.2016</Date>
+  <Time>10:00:0000</Time>
+  <Location>Raum D 113</Location>
+  <Description>Uebung Informatik 2 Gruppe 1 - Uebungsaufgabe 4 abgeben</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>16.12.2016</Date>
+  <Time>14:15:0000</Time>
+  <Location>-</Location>
+  <Description>Informatik 2 Nachsitzen</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>24.12.2016</Date>
+  <Time>18:00:0000</Time>
+  <Location>zu Hause</Location>
+  <Description>Weihnachtsfeier - open end</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>31.12.2016</Date>
+  <Time>20:00:0000</Time>
+  <Location>-</Location>
+  <Description>open end Silvesterparty - aber wo?</Description>
+  <Duration>1102605120:32766:1397176311</Duration>
+ </Appointment>
+</Calendar>
