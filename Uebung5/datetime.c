@@ -119,7 +119,7 @@ int isLeapYear(int Jahr)
  if (((Jahr % 100) != 0 && (Jahr % 4) == 0) || (Jahr % 400) == 0)
     Erg = 1;
 
-    return Erg;
+return Erg;
 }
 //  --------------------------------------------------------------------------------
 //  gibt bei korrektem Datum "true" zurück, ansonsten false
@@ -206,34 +206,37 @@ int getTime(char *Titel, TTime *Time)
     return Erg;
 }
 
-void printDate(TAppointment *calendar)
+void printDate(TAppointment *cal)
 {
     int i=0;
     char *Wochentag;
 
-    switch (calendar->DateOfAppointment.DayOfTheWeek)
+    switch (cal->DateOfAppointment.DayOfTheWeek)
     {
-        case 1: Wochentag = "Mo";            break;
-        case 2: Wochentag = "Di";            break;
-        case 3: Wochentag = "Mi";            break;
-        case 4: Wochentag = "Do";            break;
-        case 5: Wochentag = "Fr";            break;
-        case 6: Wochentag = "Sa";            break;
-        case 7: Wochentag = "So";            break;
-        case 0: Wochentag = "Not a Day";     break;
+        case 1:  Wochentag = "Mo";            break;
+        case 2:  Wochentag = "Di";            break;
+        case 3:  Wochentag = "Mi";            break;
+        case 4:  Wochentag = "Do";            break;
+        case 5:  Wochentag = "Fr";            break;
+        case 6:  Wochentag = "Sa";            break;
+        case 7:  Wochentag = "So";            break;
+        default: Wochentag = "Not a Day";     break;
     }
 
-    printf("%s, %02i.%02i.%04i:\n", Wochentag, calendar->DateOfAppointment.Day, calendar->DateOfAppointment.Month, calendar->DateOfAppointment.Year);
+    printf("%s, %02i.%02i.%04i:\n", Wochentag, cal->DateOfAppointment.Day, cal->DateOfAppointment.Month, cal->DateOfAppointment.Year);
 i++;
 }
 
 void printTime(TAppointment *calendar)
 {
 //printf("%02i:%02i\n", calendar->Duration->Hour, calendar->Duration->Minute);
-TTime endTime = addDuration(calendar);
+
 if((calendar->Duration->Hour + calendar->Duration->Minute))
+{
+    TTime endTime = addDuration(calendar);
     printf("%02i:%02i - %02i:%02i ->", calendar->TimeOfAppointment.Hour, calendar->TimeOfAppointment.Minute, endTime.Hour, endTime.Minute);
-else
+}
+   else
     printf("%02i:%02i         ->", calendar->TimeOfAppointment.Hour, calendar->TimeOfAppointment.Minute);
 }
 

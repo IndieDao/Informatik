@@ -34,15 +34,43 @@ static char *lineContent;
 //  --------------------------------------------------------------------------------
 char *extractLineContent(char * Line, char *Tag, char *endTag)
 {
-int Len;
+int Len = 0;
 int TagLength = strlen(Tag);
+int endTagLength = TagLength+1;
 
+lineContent = calloc( Len, sizeof(char));
+    //printf("%s",Line);
+    if ( strncmp( Line, Tag, TagLength) == 0)                               //Wenn Zeile und angegebenes Tag uebereinstimmen
+    {
+        while ( (strncmp((Line + TagLength + Len), endTag, endTagLength) != 0) || ((Line + TagLength + Len) == '\0')) //ist ein Ende Tag vorhanden?
+        {
+            Len++;
+            lineContent = realloc( lineContent, Len*sizeof(char));
+                          //schreibe Inhalt der Zeile
+        }
+        if (lineContent)
+                strncpy(lineContent, (Line + TagLength), Len);
+        else
+        {
+        lineContent = "";                                                  // setze  - falls leeres Feld
+        }
+    }
+return lineContent;
+}
+/*
+char extractLineContent(char * Line, char *Tag, char *endTag)
+{
+    int Len = 0;
+    int TagLength = strlen(Tag);
+    int endTagLength = TagLength+1;
 
     if ( strncmp( Line, Tag, TagLength) == 0)                               //Wenn Zeile und angegebenes Tag uebereinstimmen
     {
-        Len = strlen(Line + TagLength) - (TagLength+3);                     /**aeh warum bloss die 3 ??*/
-
-        if ( strncmp((Line + TagLength + Len), endTag, (TagLength+1)) == 0) //ist ein Ende Tag vorhanden?
+        Len = strlen(Line);
+        Len -= TagLength;
+        Len -= endTagLength;
+        Len--;
+        if ( strncmp((Line + TagLength + Len), endTag, endTagLength) == 0) //ist ein Ende Tag vorhanden?
         {
             lineContent = calloc( Len + 1, sizeof(char));
             if (lineContent)
@@ -50,12 +78,12 @@ int TagLength = strlen(Tag);
         }
         else
         {
-        lineContent = "-";                                                  // setze  - falls leeres Feld
+            lineContent = "";                                                  // setze  - falls leeres Feld
         }
     }
-return lineContent;
+    return lineContent;
 }
-
+*/
 //  --------------------------------------------------------------------------------
 //  lädt Daten genau eines Appointment aus dem *.XML File und kopiert dieses
 //  abschließend in die Kalenderstruktur
@@ -63,69 +91,82 @@ return lineContent;
 int loadAppointment(FILE *XML)
 {
 int i;
-TAppointment *Appointment;
-Appointment = calloc(1, sizeof(TAppointment));
-char Zeile[101];
-
-char *Zeilenanfang;
+TAppointment Appointment;
+//Appointment = calloc(1, sizeof(TAppointment));
+char Zeile[100];
+char *Zeilenanfang = NULL;
+char * del         = NULL;
 //Zeilenanfang = calloc(100, sizeof(char));
     do
     {
-        calendar[countAppointments].Duration = calloc (1, sizeof(TTime));                   // weil Dauer ein Zeiger ist
-        fgets(Zeile, 100, XML);
-        //fscanf(XML, "%100[\n]", Zeile);
+        //lineContent = calloc(100, sizeof(char));
+        Appointment.Duration = NULL;                   // weil Dauer ein Zeiger ist
 
-        Zeilenanfang = Zeile;
+        fgets(Zeile, 100, XML);
+        //fscanf(XML, "%100[^\n]", Zeile);
+
+        del = Zeilenanfang = Zeile;
+
+        if (*(del+strlen(Zeilenanfang) -1) == '\r')
+            *(del+strlen(Zeilenanfang) -1) = '\0';
+
         while ((*Zeilenanfang == ' ') || (*Zeilenanfang == 9))                          //loescht führende Leerstellen
             Zeilenanfang++;
+
         if (feof(XML))                                                                  //bei unerwartetem Ende
         {
             break;
         }
-        if (strncmp(Zeilenanfang, "<Date>", 6) == 0)                                    //Datumsroutine
+        else if (strncmp(Zeilenanfang, "<Date>", 6) == 0)                                    //Datumsroutine
         {
             extractLineContent(Zeilenanfang, DATE, DATEEND);
-            getDateFromString(lineContent, &Appointment->DateOfAppointment);
+            getDateFromString(lineContent, &Appointment.DateOfAppointment);
+            //free(lineContent);
         }
         else if (strncmp(Zeilenanfang, "<Time>", 6) == 0)                               //Zeitroutine
         {
             extractLineContent(Zeilenanfang, TIME, TIMEEND);
-            getTimeFromString(lineContent, &Appointment->TimeOfAppointment);
+            getTimeFromString(lineContent, &Appointment.TimeOfAppointment);
+            //free(lineContent);
         }
         else if (strncmp(Zeilenanfang, "<Description>", 6) == 0)                        //Beschreibung-Routine
         {
             extractLineContent(Zeilenanfang, DESCRIPTION, DESCRIPTIONEND);
-            Appointment->Beschreibung = lineContent;
-        }
-        else if (strncmp(Zeilenanfang, "<Duration>", 6) == 0)                           //Dauerroutine
-        {
-            extractLineContent(Zeilenanfang, DURATION, DURATIONEND);
-            getTimeFromString(lineContent,  &Duration[countAppointments]);
+            Appointment.Beschreibung = lineContent;
+            //free(lineContent);
         }
         else if (strncmp(Zeilenanfang, "<Location>", 6) == 0)                           //Ort-Routine
         {
             extractLineContent(Zeilenanfang, LOCATION, LOCATIONEND);
-            Appointment->Location = lineContent;
+            Appointment.Location = lineContent;
+            //free(lineContent);
+        }
+        else if (strncmp(Zeilenanfang, "<Duration>", 6) == 0)                           //Dauerroutine
+        {
+            Appointment.Duration = calloc (1, sizeof(TTime));                   // weil Dauer ein Zeiger ist
+            extractLineContent(Zeilenanfang, DURATION, DURATIONEND);
+            getTimeFromString(lineContent,  &Duration[countAppointments]);
+            //free(lineContent);
         }
     }while (strncmp(Zeilenanfang, APPOINTMENTEND, 14) != 0);
 
-    if( Appointment->Location == NULL )
+    if( Appointment.Location == NULL )
     {
-        Appointment->Location = "-";
+        Appointment.Location = "";
     }
     //Ab hier Übertrag in Kalender
-    calendar[countAppointments] = *Appointment;
+    calendar[countAppointments] = Appointment;
     calendar[countAppointments].Duration = &Duration[countAppointments];
     //printf("%02i:%02i\n", calendar[countAppointments].Duration->Hour, calendar[countAppointments].Duration->Minute);
     countAppointments++;
-    free(Appointment);
+    //free(Appointment);
     //free(Duration);
     //free(lineContent);
-        for ( i = 0 ; i < 101 ; i++)
-        {
+    for ( i = 0 ; i < 101 ; i++)
+    {
         *(Zeile + i) = '\0';
-        }
-return 0;
+    }
+    return 0;
 }
 
 //  --------------------------------------------------------------------------------
@@ -134,10 +175,16 @@ return 0;
 //  --------------------------------------------------------------------------------
 int loadCalendar()
 {
-char Zeile[101];
+char Zeile[100];
 char *Zeilenanfang;
 //*Zeile = '\0';
-FILE *Load = fopen( "/home/fusio/Informatik/Uebung5/calendar.xml", "rt");
+FILE *Load = fopen( "/home/ingo/Dropbox/Studium/!Informatik 2/recovery/Uebung5/calendar2.xml", "r");
+if(!Load)
+    {
+        fprintf(stderr, "Die Datei konnte nicht geoeffnet werden.\n");
+        return 0;
+    }
+
 if (Load)
     {
     fgets(Zeile, 100, Load);
@@ -148,24 +195,26 @@ if (Load)
             fgets(Zeile, 100, Load);
 
             Zeilenanfang = Zeile;
+
             while ((*Zeilenanfang == ' ') || (*Zeilenanfang == 9))
             Zeilenanfang++;
+
                 if ( strncmp(Zeilenanfang, APPOINTMENT, 13) == 0)
                 {
                 loadAppointment(Load);
 
-                if (feof(Load))
-                    {
-                        printf("EOF\n");
-                        fclose(Load);
-                        return 0;
-                    }
+                    if (feof(Load))
+                        {
+                            printf("EOF\n");
+                            fclose(Load);
+                            return 0;
+                        }
                 }
             }while(strncmp(Zeile, "</Calendar>", 11) != 0);
         }
     }
     fclose(Load);
-    return 0;
+    return 1;
 }
 
 //  --------------------------------------------------------------------------------
@@ -176,9 +225,9 @@ int saveAppointment(FILE * Save, int indexOfAppointment)
 fprintf(Save, " <Appointment>\n");
 fprintf(Save, "  <Date>%02i.%02i.%04i</Date>\n", calendar[indexOfAppointment].DateOfAppointment.Day, calendar[indexOfAppointment].DateOfAppointment.Month, calendar[indexOfAppointment].DateOfAppointment.Year);
 fprintf(Save, "  <Time>%02i:%02i:%02i</Time>\n", calendar[indexOfAppointment].TimeOfAppointment.Hour, calendar[indexOfAppointment].TimeOfAppointment.Minute, calendar[indexOfAppointment].TimeOfAppointment.Second);
-fprintf(Save, "  <Location>%s</Location>\n", calendar[indexOfAppointment].Location);
 fprintf(Save, "  <Description>%s</Description>\n", calendar[indexOfAppointment].Beschreibung);
-fprintf(Save, "  <Duration>%02i:%02i:%02i</Duration>\n", calendar[indexOfAppointment].Duration->Hour, calendar[indexOfAppointment].Duration->Minute, calendar[indexOfAppointment].Duration->Second);
+fprintf(Save, "  <Location>%s</Location>\n", calendar[indexOfAppointment].Location);
+fprintf(Save, "  <Duration>%02i:%02i</Duration>\n", calendar[indexOfAppointment].Duration->Hour, calendar[indexOfAppointment].Duration->Minute);
 fprintf(Save, " </Appointment>\n");
 return 0;
 }
@@ -190,7 +239,7 @@ return 0;
 int saveCalendar()
 {
 int i;
-FILE *Save = fopen( "/home/fusio/Informatik/Uebung5/calendar2.xml", "wt");
+FILE *Save = fopen( "/home/ingo/Dropbox/Studium/!Informatik 2/recovery/Uebung5/calendar2.xml", "w");
 if (Save)
     {
     fprintf(Save, "<Calendar>\n");
@@ -201,5 +250,5 @@ if (Save)
     }
     fprintf(Save, "</Calendar>");
     fclose(Save);
-    return 0;
+    return 1;
 }

@@ -11,6 +11,7 @@ int getDate(char *, TDate *);
 int getTime(char *, TTime *);
 void printDate(TAppointment *cal);
 void printTime(TAppointment *cal);
+TTime addDuration(TAppointment *);
 
 void clean();
 

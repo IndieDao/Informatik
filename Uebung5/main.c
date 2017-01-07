@@ -47,6 +47,6 @@ int main()
         }
    } while (Ende);                                                  // Ende des Hauptprogramms
    saveCalendar();
-   //freeCalendar();
+   freeCalendar();
    return 0;
 }

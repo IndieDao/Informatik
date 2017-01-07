@@ -35,6 +35,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="calendar.h" />
+		<Unit filename="calendar.xml" />
+		<Unit filename="calendar2.xml" />
 		<Unit filename="database.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -31,7 +31,7 @@ int main()
                             "Programm beenden"};
    do
    {
-       //clearScreen();
+       clearScreen();
        Wahl = getMenu( Menu , Menupunkte , Anz);
                                                                     //   Verzweigung in die einzelnen Programmmodule
         switch(Wahl)
@@ -47,6 +47,6 @@ int main()
         }
    } while (Ende);                                                  // Ende des Hauptprogramms
    saveCalendar();
-   //freeCalendar();
+   freeCalendar();
    return 0;
 }

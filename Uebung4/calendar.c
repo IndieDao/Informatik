@@ -4,6 +4,7 @@
 #include "datastructure.h"
 #include "datetime.h"
 #include "tools.h"
+#include "menu.h"
 #include <string.h>
 #include "escapesequenzen.h"
 /*************************************************************************
@@ -16,6 +17,8 @@
 
 int countAppointments = 0;
 
+TTime Duration[MAX_APPOINTEMENTS];
+
 TAppointment calendar[MAX_APPOINTEMENTS];
 
 int compareDate(TAppointment *Appointment1, TAppointment *Appointment2)
@@ -24,8 +27,26 @@ int compareDate(TAppointment *Appointment1, TAppointment *Appointment2)
         && Appointment1->DateOfAppointment.Month == Appointment2->DateOfAppointment.Month
         && Appointment1->DateOfAppointment.Day == Appointment2->DateOfAppointment.Day)
         return 0;
-    else
+    else if(    Appointment1->DateOfAppointment.Year >= Appointment2->DateOfAppointment.Year
+        || Appointment1->DateOfAppointment.Month >= Appointment2->DateOfAppointment.Month
+        || Appointment1->DateOfAppointment.Day >= Appointment2->DateOfAppointment.Day)
         return 1;
+    else
+        return -1;
+}
+
+int compareTime(TAppointment *Appointment1, TAppointment *Appointment2)
+{
+    if(    Appointment1->TimeOfAppointment.Hour == Appointment2->TimeOfAppointment.Hour
+        && Appointment1->TimeOfAppointment.Minute == Appointment2->TimeOfAppointment.Minute
+        && Appointment1->TimeOfAppointment.Second == Appointment2->TimeOfAppointment.Second)
+        return 0;
+    else if(    Appointment1->TimeOfAppointment.Hour >= Appointment2->TimeOfAppointment.Hour
+        || Appointment1->TimeOfAppointment.Minute >= Appointment2->TimeOfAppointment.Minute
+        || Appointment1->TimeOfAppointment.Second >= Appointment2->TimeOfAppointment.Second)
+        return 1;
+    else
+        return -1;
 }
 
 //  --------------------------------------------------------------------------------
@@ -34,7 +55,7 @@ int compareDate(TAppointment *Appointment1, TAppointment *Appointment2)
 //  --------------------------------------------------------------------------------
 void createAppointment()
 {
-    TTime Duration;
+    //TTime Duration;
 
     char *Titel = "\nErfassung eines neuen Termins\n";
     TAppointment *Appointment;
@@ -46,11 +67,13 @@ void createAppointment()
     getTime("Uhrzeit      :", &Appointment->TimeOfAppointment);
     getText("Beschreibung :", &Appointment->Beschreibung, TERMIN, 1);
     getText("Ort          :", &Appointment->Location, ORT, 1);
-    getTime("Dauer        :", &Duration);
+    //getTime("Dauer        :", &Duration);
+    Appointment->Duration = calloc (1, sizeof(TTime));
+    getTime("Dauer        :", Appointment->Duration);
     //getTime("Dauer        :",(*Appointment).Duration);
     calendar[countAppointments].Duration = calloc (1, sizeof(TTime)); // weil Dauer ein Zeiger ist
     calendar[countAppointments] = *Appointment;         //schreibt Termin in Hauptkalender
-    calendar[countAppointments].Duration = &Duration;
+    //calendar[countAppointments].Duration = &Duration;
     countAppointments++;
     printf("Termin wurde gespeichert!");
     free(Appointment);
@@ -59,7 +82,13 @@ void createAppointment()
 
 void editAppointment()
 {
+    int i;
     printf("Termin bearbeiten");
+    for(i=0; i<=countAppointments; i++)
+    {
+    printf("%02i:%02i\n", calendar[i].Duration->Hour, calendar[i].Duration->Minute);
+    printf("%s\n", calendar[i].Beschreibung);
+    }
 
     waitForEnter();
 }
@@ -81,8 +110,32 @@ void searchAppointment()
 
 void sortCalendar()
 {
-    printf("Termine sortieren\n");
-
+int Anz = 5;
+int Ende = 1;
+int Wahl;
+char *Menu = "Termine sortieren";
+char *Menupunkte[] =   {"Sortieren nach Datum und Uhrzeit",
+                            "Sortieren nach Beschreibung",
+                            "Sortieren nach Ort",
+                            "Sortieren nach Dauer",
+                            "Zurueck zum Hauptmenue"};
+   do
+   {
+       //clearScreen();
+       printf("\n");
+       FORECOLOR_YELLOW;
+       Wahl = getMenu( Menu , Menupunkte , Anz);
+                                                                    //   Verzweigung in die einzelnen Programmmodule
+        switch(Wahl)
+        {
+            case 1: break;
+            case 2: break;
+            case 3: break;
+            case 4: break;
+            case 5: Ende = 0;            break;
+        }
+        FORECOLOR_WHITE;
+   } while (Ende);
     waitForEnter();
 }
 
@@ -95,18 +148,18 @@ void listAppointment(TAppointment *Appointment, int WithDate)
     {
         printf("\n\n");
         FORECOLOR_BLUE;
-        printLine('=', 81);
+        printLine('=', 85);
         FORECOLOR_WHITE;
         printDate( Appointment);
-        printLine('~', 28);
+        printLine('~', 36);
     }
     printTime( Appointment);
-    printf("%15s     | ", Appointment->Location);
+    printf(" %-14s     | ", Appointment->Location);
 
     int len_Beschreibung = (unsigned) strlen(Appointment->Beschreibung);
 
     if(len_Beschreibung <= 48)
-        printf(" %s\n", Appointment->Beschreibung);
+        printf(" %-s\n", Appointment->Beschreibung);
 
     else if( len_Beschreibung > 48)
     {
@@ -115,7 +168,6 @@ void listAppointment(TAppointment *Appointment, int WithDate)
 
         printf("...\n");
     }
-
 }
 
 void listCalendar()
@@ -147,12 +199,19 @@ void listCalendar()
     waitForEnter();
 }
 
-void freeCalendar(TAppointment *calendar)
+void freeCalendar()
 {
 int i;
     for(i = 0 ; i <countAppointments; i++)
     {
-    free(&calendar[i]);
+        calendar[i].Beschreibung = NULL;
+        calendar[i].DateOfAppointment.Day = NULL;
+        calendar[i].DateOfAppointment.Month = NULL;
+        calendar[i].DateOfAppointment.Year = NULL;
+        calendar[i].Location = NULL;
+        calendar[i].TimeOfAppointment.Hour = NULL;
+        calendar[i].TimeOfAppointment.Minute = NULL;
+        calendar[i].TimeOfAppointment.Second = NULL;
     }
 }
 

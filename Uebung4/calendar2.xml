@@ -1,51 +1,58 @@
 <Calendar>
  <Appointment>
   <Date>06.12.2016</Date>
-  <Time>08:00:0000</Time>
-  <Location>-</Location>
+  <Time>08:00:00</Time>
   <Description>Nicht zu lange schlafen</Description>
-  <Duration>00:00:0000</Duration>
+  <Location> TÆ</Location>
+  <Duration>00:00</Duration>
  </Appointment>
  <Appointment>
   <Date>09.12.2016</Date>
-  <Time>08:00:0000</Time>
-  <Location>Raum H5</Location>
+  <Time>08:00:00</Time>
   <Description>SU Informatik 2</Description>
-  <Duration>01:30:0000</Duration>
- </Appointment>
- <Appointment>
-  <Date>16.12.2016</Date>
-  <Time>08:00:0000</Time>
   <Location>Raum H5</Location>
+  <Duration>01:30</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>16.12.2016</Date>
+  <Time>08:00:00</Time>
   <Description>SU Informatik 2 - letzte SU vor Weihnachten</Description>
-  <Duration>01:30:0000</Duration>
+  <Location>Raum H5</Location>
+  <Duration>01:30</Duration>
  </Appointment>
  <Appointment>
   <Date>16.12.2016</Date>
-  <Time>10:00:0000</Time>
-  <Location>Raum D 113</Location>
+  <Time>10:00:00</Time>
   <Description>Uebung Informatik 2 Gruppe 1 - Uebungsaufgabe 4 abgeben</Description>
-  <Duration>03:45:0000</Duration>
+  <Location>Raum D 113</Location>
+  <Duration>03:45</Duration>
  </Appointment>
  <Appointment>
   <Date>16.12.2016</Date>
-  <Time>14:15:0000</Time>
-  <Location>-</Location>
+  <Time>14:15:00</Time>
   <Description>Informatik 2 Nachsitzen</Description>
-  <Duration>01:30:0000</Duration>
+  <Location>Raum D 113</Location>
+  <Duration>01:30</Duration>
  </Appointment>
  <Appointment>
   <Date>24.12.2016</Date>
-  <Time>18:00:0000</Time>
+  <Time>18:00:00</Time>
+  <Description>Weihnachtsfeier - open end</Description>
   <Location>zu Hause</Location>
-  <Description>Weihnachtsfeier - open end</Description>
-  <Duration>00:00:0000</Duration>
+  <Duration>00:00</Duration>
  </Appointment>
  <Appointment>
   <Date>31.12.2016</Date>
-  <Time>20:00:0000</Time>
-  <Location>-</Location>
+  <Time>20:00:00</Time>
   <Description>open end Silvesterparty - aber wo?</Description>
-  <Duration>00:00:0000</Duration>
+  <Location>zu Hause</Location>
+  <Duration>00:00</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>01.01.2017</Date>
+  <Time>00:01:00</Time>
+  <Description>neues jahr</Description>
+  <Location>Weltweit</Location>
+  <Duration>01:01</Duration>
  </Appointment>
 </Calendar>

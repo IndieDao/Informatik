@@ -10,7 +10,7 @@ void searchAppointment();
 void sortCalendar();
 void listCalendar();
 void listAppointment(TAppointment *Appointment, int WithDate);
-void freeCalendar(TAppointment *calendar);
+void freeCalendar();
 void freeAppointment();
 
 #endif // CALENDAR_H_INCLUDED

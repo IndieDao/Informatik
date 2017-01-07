@@ -131,3 +131,33 @@
 	"escapesequenzen.h"
 	"tools.h"
 
+1483718610 source:/home/ingo/Informatik/Uebung4/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1483652729 /home/ingo/Informatik/Uebung4/datastructure.h
+
+1483652729 /home/ingo/Informatik/Uebung4/datetime.h
+
+1483652729 /home/ingo/Informatik/Uebung4/tools.h
+
+1483652729 /home/ingo/Informatik/Uebung4/escapesequenzen.h
+
+1483652729 source:/home/ingo/Informatik/Uebung4/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1483652729 source:/home/ingo/Informatik/Uebung4/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+

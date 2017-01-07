@@ -67,11 +67,13 @@ void createAppointment()
     getTime("Uhrzeit      :", &Appointment->TimeOfAppointment);
     getText("Beschreibung :", &Appointment->Beschreibung, TERMIN, 1);
     getText("Ort          :", &Appointment->Location, ORT, 1);
-    getTime("Dauer        :", &Duration);
+    //getTime("Dauer        :", &Duration);
+    Appointment->Duration = calloc (1, sizeof(TTime));
+    getTime("Dauer        :", Appointment->Duration);
     //getTime("Dauer        :",(*Appointment).Duration);
     calendar[countAppointments].Duration = calloc (1, sizeof(TTime)); // weil Dauer ein Zeiger ist
     calendar[countAppointments] = *Appointment;         //schreibt Termin in Hauptkalender
-    calendar[countAppointments].Duration = &Duration;
+    //calendar[countAppointments].Duration = &Duration;
     countAppointments++;
     printf("Termin wurde gespeichert!");
     free(Appointment);
@@ -146,18 +148,18 @@ void listAppointment(TAppointment *Appointment, int WithDate)
     {
         printf("\n\n");
         FORECOLOR_BLUE;
-        printLine('=', 81);
+        printLine('=', 85);
         FORECOLOR_WHITE;
         printDate( Appointment);
         printLine('~', 36);
     }
     printTime( Appointment);
-    printf("%15s     | ", Appointment->Location);
+    printf(" %-14s     | ", Appointment->Location);
 
     int len_Beschreibung = (unsigned) strlen(Appointment->Beschreibung);
 
     if(len_Beschreibung <= 48)
-        printf(" %s\n", Appointment->Beschreibung);
+        printf(" %-s\n", Appointment->Beschreibung);
 
     else if( len_Beschreibung > 48)
     {
@@ -166,7 +168,6 @@ void listAppointment(TAppointment *Appointment, int WithDate)
 
         printf("...\n");
     }
-
 }
 
 void listCalendar()
@@ -198,12 +199,19 @@ void listCalendar()
     waitForEnter();
 }
 
-void freeCalendar(TAppointment *calendar)
+void freeCalendar()
 {
 int i;
     for(i = 0 ; i <countAppointments; i++)
     {
-    free(&calendar[i]);
+        calendar[i].Beschreibung = NULL;
+        calendar[i].DateOfAppointment.Day = NULL;
+        calendar[i].DateOfAppointment.Month = NULL;
+        calendar[i].DateOfAppointment.Year = NULL;
+        calendar[i].Location = NULL;
+        calendar[i].TimeOfAppointment.Hour = NULL;
+        calendar[i].TimeOfAppointment.Minute = NULL;
+        calendar[i].TimeOfAppointment.Second = NULL;
     }
 }
 

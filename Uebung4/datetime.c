@@ -64,18 +64,30 @@ int getTimeFromString(char *Eingabe, TTime *Zeit)
     char *pHour;
     char *pMinute;
     char *pSecond;
-    //Zeit->Second      = 0;
+
     if(Eingabe)
     {
     pHour = tmpToken(Eingabe, DOPPELPUNKT);
-    Zeit->Hour      = atoi(pHour);
+        if(atoi(pHour))                                                      // Sekunden sind optional
+        {
+            Zeit->Hour      = atoi(pHour);
+        }
+        else
+            Zeit->Hour= 0;
+
     pMinute = tmpToken(Eingabe, DOPPELPUNKT);
-    Zeit->Minute      = atoi(pMinute);
+        if(atoi(pMinute))                                                      // Sekunden sind optional
+        {
+            Zeit->Minute      = atoi(pMinute);
+        }
+        else
+            Zeit->Minute = 0;
+
     pSecond = tmpToken(Eingabe, DOPPELPUNKT);
-    if(atoi(pSecond))                                                      // Sekunden sind optional
-    {
-        Zeit->Second      = atoi(pSecond);
-    }
+        if(atoi(pSecond))                                                      // Sekunden sind optional
+        {
+            Zeit->Second      = atoi(pSecond);
+        }
     else
     Zeit->Second = 0;
 
@@ -107,7 +119,7 @@ int isLeapYear(int Jahr)
  if (((Jahr % 100) != 0 && (Jahr % 4) == 0) || (Jahr % 400) == 0)
     Erg = 1;
 
-    return Erg;
+return Erg;
 }
 //  --------------------------------------------------------------------------------
 //  gibt bei korrektem Datum "true" zurück, ansonsten false
@@ -150,6 +162,7 @@ int getDate(char *Titel, TDate *Date) // Einbage = Eingabebaufforderung
 
     return 0;
 }
+
 //  --------------------------------------------------------------------------------
 //  prüft Benutzereingabe einer Uhrzeit über Input und schreibt bei Validität die
 //  Daten via der Funktion getTimeFromString in ein TTime Konstrukt
@@ -193,30 +206,65 @@ int getTime(char *Titel, TTime *Time)
     return Erg;
 }
 
-void printDate(TAppointment *calendar)
+void printDate(TAppointment *cal)
 {
     int i=0;
     char *Wochentag;
 
-    switch (calendar->DateOfAppointment.DayOfTheWeek)
+    switch (cal->DateOfAppointment.DayOfTheWeek)
     {
-        case 1: Wochentag = "Mo";            break;
-        case 2: Wochentag = "Di";            break;
-        case 3: Wochentag = "Mi";            break;
-        case 4: Wochentag = "Do";            break;
-        case 5: Wochentag = "Fr";            break;
-        case 6: Wochentag = "Sa";            break;
-        case 7: Wochentag = "So";            break;
-        case 0: Wochentag = "Not a Day";     break;
+        case 1:  Wochentag = "Mo";            break;
+        case 2:  Wochentag = "Di";            break;
+        case 3:  Wochentag = "Mi";            break;
+        case 4:  Wochentag = "Do";            break;
+        case 5:  Wochentag = "Fr";            break;
+        case 6:  Wochentag = "Sa";            break;
+        case 7:  Wochentag = "So";            break;
+        default: Wochentag = "Not a Day";     break;
     }
 
-    printf("%s, %02i.%02i.%04i:\n", Wochentag, calendar->DateOfAppointment.Day, calendar->DateOfAppointment.Month, calendar->DateOfAppointment.Year);
+    printf("%s, %02i.%02i.%04i:\n", Wochentag, cal->DateOfAppointment.Day, cal->DateOfAppointment.Month, cal->DateOfAppointment.Year);
 i++;
 }
 
 void printTime(TAppointment *calendar)
 {
-    printf("%02i:%02i ->", calendar->TimeOfAppointment.Hour, calendar->TimeOfAppointment.Minute);
+//printf("%02i:%02i\n", calendar->Duration->Hour, calendar->Duration->Minute);
+
+if((calendar->Duration->Hour + calendar->Duration->Minute))
+{
+    TTime endTime = addDuration(calendar);
+    printf("%02i:%02i - %02i:%02i ->", calendar->TimeOfAppointment.Hour, calendar->TimeOfAppointment.Minute, endTime.Hour, endTime.Minute);
+}
+   else
+    printf("%02i:%02i         ->", calendar->TimeOfAppointment.Hour, calendar->TimeOfAppointment.Minute);
+}
+
+TTime addDuration(TAppointment *calendar)
+{
+    TTime endTime;
+    int pSecond;
+    int pMinute;
+    int pHour;
+
+    pSecond = (*calendar).Duration->Second + calendar->TimeOfAppointment.Second;
+    pMinute = (*calendar).Duration->Minute + calendar->TimeOfAppointment.Minute;
+    pHour = (*calendar).Duration->Hour + calendar->TimeOfAppointment.Hour;
+
+    if (pSecond >=60)
+    {
+        pSecond = pSecond-60;
+        pMinute++;
+    }
+    if (pMinute >=60)
+    {
+        pMinute = pMinute-60;
+        pHour++;
+    }
+    endTime.Hour = pHour;
+    endTime.Minute = pMinute;
+    endTime.Second = pSecond;
+    return endTime;
 }
 
 /*
