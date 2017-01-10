@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1483994403 source:/home/ingo/Informatik/Info2Uebung6/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"sort.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1483991606 /home/ingo/Informatik/Info2Uebung6/calendar.h
+	"datastructure.h"
+
+1483888941 /home/ingo/Informatik/Info2Uebung6/datastructure.h
+
+1483652729 /home/ingo/Informatik/Info2Uebung6/datetime.h
+
+1483891624 /home/ingo/Informatik/Info2Uebung6/tools.h
+
+1483973680 /home/ingo/Informatik/Info2Uebung6/menu.h
+
+1483652729 /home/ingo/Informatik/Info2Uebung6/escapesequenzen.h
+
+1483972163 source:/home/ingo/Informatik/Info2Uebung6/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+
+1483912673 source:/home/ingo/Informatik/Info2Uebung6/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1483819900 /home/ingo/Informatik/Info2Uebung6/database.h
+
+1483973680 source:/home/ingo/Informatik/Info2Uebung6/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1483994033 source:/home/ingo/Informatik/Info2Uebung6/sort.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"escapesequenzen.h"
+
+1483891624 source:/home/ingo/Informatik/Info2Uebung6/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1483975136 source:/home/ingo/Informatik/Info2Uebung6/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1483880608 source:/home/ingo/Informatik/Info2Uebung6/list.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1483992112 /home/ingo/Informatik/Info2Uebung6/sort.h
+
