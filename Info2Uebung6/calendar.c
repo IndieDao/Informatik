@@ -22,18 +22,23 @@
 
 int countAppointments = 0;
 
-TTime Duration[MAX_APPOINTEMENTS];
+//TTime Duration[MAX_APPOINTEMENTS];
 
 TAppointment calendar[MAX_APPOINTEMENTS];
 
 
-void swapAppointment(TAppointment Appointment1, TAppointment Appointment2)
+void swapAppointment(TAppointment *Appointment1, TAppointment *Appointment2)
 {
+    //("\nswap 1. %i.%i.%i", Appointment1.DateOfAppointment.Day, Appointment1.DateOfAppointment.Month,Appointment1.DateOfAppointment.Year );
+    //printf("\n     2. %i.%i.%i\n", Appointment2.DateOfAppointment.Day, Appointment2.DateOfAppointment.Month,Appointment2.DateOfAppointment.Year );
+
     TAppointment temp;
     // setze Vergleichselement (Schranke zwischen beide Teile)
-    temp = Appointment2;
-    Appointment2 = Appointment1;
-    Appointment1 = temp;
+    temp = *Appointment1;
+    *Appointment1 = *Appointment2;
+    *Appointment2 = temp;
+    //printf("\n     1. %i.%i.%i", Appointment1.DateOfAppointment.Day, Appointment1.DateOfAppointment.Month,Appointment1.DateOfAppointment.Year );
+    //printf("\n     2. %i.%i.%i\n", Appointment2.DateOfAppointment.Day, Appointment2.DateOfAppointment.Month,Appointment2.DateOfAppointment.Year );
 }
 
 //  --------------------------------------------------------------------------------
@@ -66,11 +71,14 @@ int compareDuration(TAppointment Appointment1, TAppointment Appointment2)
     {
         Vergleich = 1;
     }
+    printf("Vergleich = %i", Vergleich);
     return Vergleich;
 }
 
 int compareDate(TAppointment Appointment1, TAppointment Appointment2)
 {
+    //printf("\nI  %2i.%2i.%4i\n", Appointment1.DateOfAppointment.Day, Appointment1.DateOfAppointment.Month, Appointment1.DateOfAppointment.Year);
+    //printf("II %2i.%2i.%4i\n", Appointment2.DateOfAppointment.Day, Appointment2.DateOfAppointment.Month, Appointment2.DateOfAppointment.Year);
     int Vergleich = -1;
     //Vergleich = (Appointment1->DateOfAppointment.Year == Appointment2->DateOfAppointment.Year) ? 0 : 1;
     if(Appointment1.DateOfAppointment.Year == Appointment2.DateOfAppointment.Year)
@@ -95,6 +103,8 @@ int compareDate(TAppointment Appointment1, TAppointment Appointment2)
     {
         Vergleich = 1;
     }
+        //printf("Vergleich = %i", Vergleich);
+
     return Vergleich;
 }
 //  --------------------------------------------------------------------------------
@@ -135,6 +145,8 @@ int compareDescription(TAppointment Appointment1, TAppointment Appointment2)
     }while (*(App1+i) == *(App2+i++) );
     free(App1);
     free(App2);
+        printf("Vergleich = %i", Vergleich);
+
     return Vergleich;
  }
 //  --------------------------------------------------------------------------------
@@ -175,6 +187,8 @@ int compareLocation(TAppointment Appointment1, TAppointment Appointment2)
     }while (*(App1+i) == *(App2+i++) );
     free(App1);
     free(App2);
+        printf("Vergleich = %i", Vergleich);
+
     return Vergleich;
  }
 //  --------------------------------------------------------------------------------
@@ -207,6 +221,8 @@ int compareTime(TAppointment Appointment1, TAppointment Appointment2)
     {
         Vergleich = 1;
     }
+    printf("Vergleich = %i", Vergleich);
+
     return Vergleich;
 }
 
@@ -277,7 +293,27 @@ void editAppointment()
 //  --------------------------------------------------------------------------------
 void deleteAppointment()
 {
-    printf("Termin loeschen\n");
+int i;
+int WithDate = 1;
+
+    char *Titel = "TermineListe";
+    printf("\n%s\n", Titel);
+    printLine('-', (strlen(Titel)-2)); //Umbruch muss abgezogen werden
+    printf("\n");
+    if(countAppointments > 0)
+    {
+        //Ausgabe für Termin mit gleichem Datum
+        for(i = 0 ; i < countAppointments; i++)
+        {
+            printf("%i.) ", countAppointments);
+        }
+    }
+    else
+    {
+        printf("\nkeine Termine gespeichert.\n");
+    }
+    waitForEnter();
+
 
     waitForEnter();
 }
@@ -313,9 +349,9 @@ char *Menupunkte[] =   {"Sortieren nach Datum und Uhrzeit",
         switch(Wahl)
         {
             case 1:
-                    printf("%i", compareDate(calendar[0],calendar[1]));
-                    quicksort(&(calendar), countAppointments, DATUM );
-                    Ende = 0;
+                    //printf("\n Abfrage I kleiner als II %i", compareDate(calendar[1],calendar[0]));
+                    quicksort(&(calendar), countAppointments, compareDate, swapAppointment );
+                    //Ende = 0;
                     break;
 
             case 2: printf("%i", compareDescription(calendar[3],calendar[2]));

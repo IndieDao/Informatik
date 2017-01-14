@@ -2,8 +2,9 @@
  <Appointment>
   <Date>06.12.2016</Date>
   <Time>08:00:00</Time>
-  <Description>Ausschlafen</Description>
   <Description>Nicht zu lange schlafen</Description>
+  <Location></Location>
+  <Duration>00:00</Duration>
  </Appointment>
  <Appointment>
   <Date>09.12.2016</Date>
@@ -30,17 +31,28 @@
   <Date>16.12.2016</Date>
   <Time>14:15:00</Time>
   <Description>Informatik 2 Nachsitzen</Description>
+  <Location></Location>
   <Duration>01:30</Duration>
  </Appointment>
  <Appointment>
   <Date>24.12.2016</Date>
   <Time>18:00:00</Time>
-  <Description>Weihnachtsfeier - open end</Description>
+  <Description>Weihnachtsfeier - open end</Description>
   <Location>zu Hause</Location>
+  <Duration>00:00</Duration>
  </Appointment>
  <Appointment>
   <Date>31.12.2016</Date>
   <Time>20:00:00</Time>
   <Description>open end Silvesterparty - aber wo?</Description>
+  <Location></Location>
+  <Duration>00:00</Duration>
+ </Appointment>
+ <Appointment>
+  <Date>01.01.2000</Date>
+  <Time>12:00:00</Time>
+  <Description>Sortiert es?</Description>
+  <Location>Berlin</Location>
+  <Duration>20:00</Duration>
  </Appointment>
 </Calendar>

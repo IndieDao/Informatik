@@ -3,7 +3,7 @@
 #include "datastructure.h"
 
 
-void swapAppointment(TAppointment Appointment1, TAppointment Appointment2);
+void swapAppointment(TAppointment *Appointment1, TAppointment *Appointment2);
 int compareTime(TAppointment Appointment1, TAppointment Appointment2);
 int compareDate(TAppointment Appointment1, TAppointment Appointment2);
 int compareDescription(TAppointment Appointment1, TAppointment Appointment2);
@@ -23,6 +23,10 @@ void listCalendar();
 
 void freeCalendar();
 void freeAppointment();
+
+//static int (*compare[])(TAppointment *, TAppointment *) = { compareDate, compareTime, compareDuration, compareDescription, compareLocation };   /** Funktionsarray          */
+//static void (*exchange[])(TAppointment *, TAppointment *) = { swapAppointment };   /** Funktionsarray          */
+
 
 //compare comparePointer[] = { compareDate, compareTime, compareDescription, compareLocation };
 #endif // CALENDAR_H_INCLUDED

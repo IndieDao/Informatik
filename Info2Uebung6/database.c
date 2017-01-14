@@ -35,11 +35,11 @@ static char *lineContent;
 //  --------------------------------------------------------------------------------
 char *extractLineContent(char * Line, char *Tag, char *endTag)
 {
-int Len = 0;
-int TagLength = strlen(Tag);
-int endTagLength = TagLength+1;
+    int Len = 0;
+    int TagLength = strlen(Tag);
+    int endTagLength = TagLength+1;
 
-lineContent = calloc( Len, sizeof(char));
+    lineContent = calloc( Len, sizeof(char));
     //printf("%s",Line);
     if ( strncmp( Line, Tag, TagLength) == 0)                               //Wenn Zeile und angegebenes Tag uebereinstimmen
     {
@@ -50,13 +50,13 @@ lineContent = calloc( Len, sizeof(char));
                           //schreibe Inhalt der Zeile
         }
         if (lineContent)
-                strncpy(lineContent, (Line + TagLength), Len);
+            strncpy(lineContent, (Line + TagLength), Len);
         else
         {
-        lineContent = "";                                                  // setze  - falls leeres Feld
+            lineContent = "";                                                  // setze  - falls leeres Feld
         }
     }
-return lineContent;
+    return lineContent;
 }
 
 //  --------------------------------------------------------------------------------

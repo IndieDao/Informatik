@@ -273,6 +273,10 @@ TTime addDuration(TAppointment *calendar)
         pMinute = pMinute-60;
         pHour++;
     }
+        if (pHour >=24)
+    {
+        pHour = pHour-24;
+    }
     endTime.Hour = pHour;
     endTime.Minute = pMinute;
     endTime.Second = pSecond;
