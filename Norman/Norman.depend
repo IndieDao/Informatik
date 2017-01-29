@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1484310970 source:/home/ingo/Informatik/Norman/calendar.c
+	<stdio.h>
+	"calendar.h"
+
+1484310090 /home/ingo/Informatik/Norman/calendar.h
+	"datetime.h"
+	"tools.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"datetime.h"
+	"sort.h"
+	"tools.h"
+
+1484310602 /home/ingo/Informatik/Norman/datetime.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"datetime.h"
+	"datastructure.h"
+	"datastructure.h"
+
+1480684430 /home/ingo/Informatik/Norman/datastructure.h
+
+1481891956 /home/ingo/Informatik/Norman/tools.h
+	<string.h>
+	"datastructure.h"
+	"datetime.h"
+
+1484560976 /home/ingo/Informatik/Norman/sort.h
+	"datastructure.h"
+
+1483622064 source:/home/ingo/Informatik/Norman/database.c
+	"database.h"
+
+1484215922 /home/ingo/Informatik/Norman/database.h
+	"datastructure.h"
+	"tools.h"
+	"calendar.h"
+	<memory.h>
+	<stdio.h>
+	<stdlib.h>
+	"datetime.h"
+
+1484311074 source:/home/ingo/Informatik/Norman/datetime.c
+	"datetime.h"
+	"tools.h"
+
+1484306466 source:/home/ingo/Informatik/Norman/main.c
+	"calendar.h"
+	"tools.h"
+	"menu.h"
+	"datastructure.h"
+	"database.h"
+
+1478808850 /home/ingo/Informatik/Norman/menu.h
+	<stdio.h>
+
+1478867586 source:/home/ingo/Informatik/Norman/menu.c
+	<string.h>
+	"menu.h"
+	"tools.h"
+
+1484311254 source:/home/ingo/Informatik/Norman/tools.c
+	<stdio.h>
+	"tools.h"
+
+1484562080 source:/home/ingo/Informatik/Norman/sort.c
+	"sort.h"
+

@@ -1,0 +1,244 @@
+# depslib dependency file v1.0
+1484573574 source:/home/ingo/Informatik/Info2Uebung6/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"sort.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1484568340 /home/ingo/Informatik/Info2Uebung6/calendar.h
+	"datastructure.h"
+
+1483888941 /home/ingo/Informatik/Info2Uebung6/datastructure.h
+
+1484571792 /home/ingo/Informatik/Info2Uebung6/datetime.h
+
+1484572850 /home/ingo/Informatik/Info2Uebung6/tools.h
+
+1483973680 /home/ingo/Informatik/Info2Uebung6/menu.h
+
+1483652729 /home/ingo/Informatik/Info2Uebung6/escapesequenzen.h
+
+1484571781 source:/home/ingo/Informatik/Info2Uebung6/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+
+1483912673 source:/home/ingo/Informatik/Info2Uebung6/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1484569239 /home/ingo/Informatik/Info2Uebung6/database.h
+
+1483973680 source:/home/ingo/Informatik/Info2Uebung6/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1484573542 source:/home/ingo/Informatik/Info2Uebung6/sort.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"escapesequenzen.h"
+
+1484572852 source:/home/ingo/Informatik/Info2Uebung6/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escapesequenzen.h"
+	"tools.h"
+
+1484569033 source:/home/ingo/Informatik/Info2Uebung6/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1483880608 source:/home/ingo/Informatik/Info2Uebung6/list.c
+	<stdio.h>
+	<stdlib.h>
+	"calendar.h"
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1484573686 /home/ingo/Informatik/Info2Uebung6/sort.h
+
+1484926441 source:/home/ingo/Informatik/Uebung 5 final/calendar.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"calendar.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"sort.h"
+	<string.h>
+	"escapesequenzen.h"
+
+1484568340 /home/ingo/Informatik/Uebung 5 final/calendar.h
+	"datastructure.h"
+
+1484916917 /home/ingo/Informatik/Uebung 5 final/datastructure.h
+
+1484571792 /home/ingo/Informatik/Uebung 5 final/datetime.h
+
+1484916917 /home/ingo/Informatik/Uebung 5 final/tools.h
+
+1483973680 /home/ingo/Informatik/Uebung 5 final/menu.h
+
+1484916209 /home/ingo/Informatik/Uebung 5 final/sort.h
+
+1483652729 /home/ingo/Informatik/Uebung 5 final/escapesequenzen.h
+
+1484925180 source:/home/ingo/Informatik/Uebung 5 final/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1484571781 source:/home/ingo/Informatik/Uebung 5 final/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+
+1483912673 source:/home/ingo/Informatik/Uebung 5 final/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1484569239 /home/ingo/Informatik/Uebung 5 final/database.h
+
+1483973680 source:/home/ingo/Informatik/Uebung 5 final/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1484916231 source:/home/ingo/Informatik/Uebung 5 final/sort.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"sort.h"
+	"calendar.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"escapesequenzen.h"
+
+1484916821 source:/home/ingo/Informatik/Uebung 5 final/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"escapesequenzen.h"
+	"tools.h"
+
+1484925180 source:/home/fusio/Informatik/Uebung 5 final/database.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"datastructure.h"
+	"datetime.h"
+	"calendar.h"
+	"tools.h"
+
+1484916917 /home/fusio/Informatik/Uebung 5 final/datastructure.h
+
+1484571792 /home/fusio/Informatik/Uebung 5 final/datetime.h
+
+1484568340 /home/fusio/Informatik/Uebung 5 final/calendar.h
+	"datastructure.h"
+
+1484916917 /home/fusio/Informatik/Uebung 5 final/tools.h
+
+1484571781 source:/home/fusio/Informatik/Uebung 5 final/datetime.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"escapesequenzen.h"
+
+1483652729 /home/fusio/Informatik/Uebung 5 final/escapesequenzen.h
+
+1483912673 source:/home/fusio/Informatik/Uebung 5 final/main.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"datetime.h"
+	"tools.h"
+	"calendar.h"
+	"menu.h"
+	"database.h"
+
+1483973680 /home/fusio/Informatik/Uebung 5 final/menu.h
+
+1484569239 /home/fusio/Informatik/Uebung 5 final/database.h
+
+1483973680 source:/home/fusio/Informatik/Uebung 5 final/menu.c
+	<stdio.h>
+	"tools.h"
+	"escapesequenzen.h"
+	<string.h>
+
+1484916231 source:/home/fusio/Informatik/Uebung 5 final/sort.c
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"sort.h"
+	"calendar.h"
+	"datetime.h"
+	"tools.h"
+	"menu.h"
+	"escapesequenzen.h"
+
+1484916209 /home/fusio/Informatik/Uebung 5 final/sort.h
+
+1484916821 source:/home/fusio/Informatik/Uebung 5 final/tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+	"escapesequenzen.h"
+	"tools.h"
+

@@ -1,0 +1,32 @@
+﻿  tools.c
+  sort.c
+  menu.c
+  main.c
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "1" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "2" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "3" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "4" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4273: "qsort": Inkonsistente DLL-Bindung.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\corecrt_search.h(53): note: Siehe vorherige Definition von "qsort"
+  datetime.c
+  database.c
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "1" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "2" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "3" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "4" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4273: "qsort": Inkonsistente DLL-Bindung.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\corecrt_search.h(53): note: Siehe vorherige Definition von "qsort"
+  calendar.c
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4031: Die zweite Liste formaler Parameter ist länger als die erste Liste
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "1" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "2" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "3" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4028: Formaler Parameter "4" unterscheidet sich von der Deklaration
+c:\users\root\documents\ueb02\ueb02\sort.h(9): warning C4273: "qsort": Inkonsistente DLL-Bindung.
+  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\corecrt_search.h(53): note: Siehe vorherige Definition von "qsort"
+  Code wird generiert...
+  LINK : C:\Users\root\Documents\Ueb02\Debug\Ueb02.exe wurde nicht gefunden oder beim letzten inkrementellen Linkvorgang nicht erstellt; vollständiger Link wird durchgeführt.
+  Ueb02.vcxproj -> C:\Users\root\Documents\Ueb02\Debug\Ueb02.exe
+  Ueb02.vcxproj -> C:\Users\root\Documents\Ueb02\Debug\Ueb02.pdb (Partial PDB)

@@ -1,0 +1,65 @@
+<calendar>
+<Appointment>
+<Date>01.12.2016</Date>
+<Time>05:30:00</Time>
+<Description>1. Tuerchen oeffnen</Description>
+<Location></Location>
+<Duration>00:00:00</Duration>
+</Appointment>
+<Appointment>
+<Date>31.12.2016</Date>
+<Time>20:00:00</Time>
+<Description>Open End Silvesterparty - aber wo?</Description>
+<Location></Location>
+<Duration>00:00:00</Duration>
+</Appointment>
+<Appointment>
+<Date>24.12.2016</Date>
+<Time>18:00:00</Time>
+<Description>Weihnachtsfeier - open end</Description>
+<Location>zu Hause</Location>
+<Duration>00:00:00</Duration>
+</Appointment>
+<Appointment>
+<Date>06.12.2016</Date>
+<Time>08:00:00</Time>
+<Description>Nicht zu lange schlafen</Description>
+<Location></Location>
+<Duration>00:00:00</Duration>
+</Appointment>
+<Appointment>
+<Date>16.12.2016</Date>
+<Time>08:00:00</Time>
+<Description>SU Informatik 2 - letzte SU vor Weihnachten</Description>
+<Location>Raum H5</Location>
+<Duration>01:30:00</Duration>
+</Appointment>
+<Appointment>
+<Date>09.12.2016</Date>
+<Time>08:00:00</Time>
+<Description>SU Informatik 2</Description>
+<Location>Raum H5</Location>
+<Duration>01:30:00</Duration>
+</Appointment>
+<Appointment>
+<Date>16.12.2016</Date>
+<Time>14:15:00</Time>
+<Description>Informatik 2 Nachsitzen</Description>
+<Location></Location>
+<Duration>01:30:00</Duration>
+</Appointment>
+<Appointment>
+<Date>06.01.2017</Date>
+<Time>08:00:00</Time>
+<Description>SU Informatik 2 - wieder puenktlich um 8 Uhr da sein</Description>
+<Location>Raum H5</Location>
+<Duration>01:30:00</Duration>
+</Appointment>
+<Appointment>
+<Date>01.01.2030</Date>
+<Time>01:20:00</Time>
+<Description>Tester</Description>
+<Location>Berlin</Location>
+<Duration>10:00:00</Duration>
+</Appointment>
+</calendar>
