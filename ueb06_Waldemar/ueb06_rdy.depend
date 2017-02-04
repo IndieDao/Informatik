@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1486107014 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\calendar.c
+	"calendar.h"
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"menu.h"
+	"timedate.h"
+	"escapesequenzen.h"
+	"datastructure.h"
+	"database.h"
+	"sort.h"
+	"list.h"
+
+1486106715 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\calendar.h
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\tools.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+
+1483521198 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\timeanddate.h
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\datastructure.h
+
+1445708464 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\escapesequenzen.h
+
+1486106715 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\database.h
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\sort.h
+	"calendar.h"
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"tools.h"
+	"menu.h"
+	"timedate.h"
+	"escapesequenzen.h"
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\list.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+
+1486072764 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\database.c
+	"database.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+	"datastructure.h"
+	"timedate.h"
+	"list.h"
+
+1486112446 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\list.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"datastructure.h"
+
+1486106715 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tools.h"
+	"menu.h"
+	"calendar.h"
+	"database.h"
+	"datastructure.h"
+
+1486072764 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\menu.c
+	"menu.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+
+1486072764 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\sort.c
+	"sort.h"
+	"calendar.h"
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+	"tools.h"
+	"menu.h"
+	"timedate.h"
+	"escapesequenzen.h"
+
+1486072774 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\timeanddate.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"timedate.h"
+	"tools.h"
+	"datastructure.h"
+	"escapesequenzen.h"
+
+1486073352 source:c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\tools.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tools.h"
+
+1486072764 c:\users\yannic\documents\studium beuth\info_2\ueb06_rdy\timedate.h
+	<stdio.h>
+	<stdlib.h>
+	"datastructure.h"
+
